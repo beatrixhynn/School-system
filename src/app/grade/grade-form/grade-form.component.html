@@ -1,0 +1,98 @@
+
+<p-toast></p-toast>
+
+<div class="form-page">
+  <div class="form-card">
+
+    <div class="form-header">
+      <!-- <div class="form-header-icon">🏫</div> -->
+      <div>
+        <span class="form-eyebrow">COLÉGIO LUMIER</span>
+        <h2>{{ idgrade ? 'Editar Turma' : 'Cadastro de Turma' }}</h2>
+      </div>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <form [formGroup]="form" (submit)="doSubmitForm()">
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="year">Ano</label>
+          <input
+            type="text"
+            id="year"
+            pInputText
+            formControlName="year"
+            placeholder="Ex: 2025"
+            [class.input-invalid]="form.get('year')?.invalid && form.get('year')?.touched"/>
+          <small class="error-msg"
+            *ngIf="form.get('year')?.invalid && form.get('year')?.touched">
+            ⚠️ O ano é obrigatório
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="section">Turma</label>
+          <input
+            type="text"
+            id="section"
+            pInputText
+            formControlName="section"
+            placeholder="Ex: 3º A"
+            [class.input-invalid]="form.get('section')?.invalid && form.get('section')?.touched"/>
+          <small class="error-msg"
+            *ngIf="form.get('section')?.invalid && form.get('section')?.touched">
+            ⚠️ A turma é obrigatória
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="room">Sala</label>
+          <input
+            type="text"
+            id="room"
+            pInputText
+            formControlName="room"
+            placeholder="Ex: Sala 12"
+            [class.input-invalid]="form.get('room')?.invalid && form.get('room')?.touched"/>
+          <small class="error-msg"
+            *ngIf="form.get('room')?.invalid && form.get('room')?.touched">
+            ⚠️ A sala é obrigatória
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="teacherId">Professor(a)</label>
+          <p-dropdown
+            id="teacherId"
+            formControlName="teacherId"
+            [options]="teachersList"
+            optionLabel="name"
+            optionValue="id"
+            placeholder="Selecione um professor"
+            [style]="{'width':'100%'}"
+            [ngClass]="{'p-invalid': form.get('teacherId')?.invalid && form.get('teacherId')?.touched}">
+          </p-dropdown>
+          <small class="error-msg"
+            *ngIf="form.get('teacherId')?.invalid && form.get('teacherId')?.touched">
+            ⚠️ Selecione um professor
+          </small>
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-cancel"
+          (click)="router.navigateByUrl('grades')">
+          Cancelar
+        </button>
+        <button type="submit" class="btn-submit" [disabled]="form.invalid">
+          <i class="pi" [ngClass]="idgrade ? 'pi-check' : 'pi-plus'"></i>
+          {{ idgrade ? 'Salvar Alterações' : 'Cadastrar Turma' }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
