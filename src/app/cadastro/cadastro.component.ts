@@ -1,13 +1,68 @@
+// import { Component } from '@angular/core';
+// import { FormsModule } from '@angular/forms';
+// import { Router } from '@angular/router';
+// import { CadastroService } from '../../app/cadastro/service/cadastro.service';
+
+
+// @Component({
+//   selector: 'app-cadastro',
+//   standalone: true,
+//   imports: [FormsModule],
+//   templateUrl: './cadastro.component.html',
+//   styleUrl: './cadastro.component.scss'
+// })
+// export class CadastroComponent {
+
+//   email = '';
+//   password = '';
+
+
+// constructor(
+//   private cadastroService: CadastroService,
+//   private router: Router
+// ) {}
+
+//   cadastrar() {
+
+//     const dados = {
+//       email: this.email,
+//       password: this.password
+//     };
+
+//     this.cadastroService.register(dados)
+//       .subscribe({
+
+//         next: () => {
+
+//           alert('Conta criada com sucesso!');
+
+//           this.router.navigate(['/login-form']);
+//         },
+
+//         error: (err: any) => {
+
+//           console.error(err);
+
+//           alert('Erro ao cadastrar usuário');
+//         }
+//       });
+//   }
+
+//     voltar() {
+//     this.router.navigate(['/login']);
+//   }
+// }
+
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { CadastroService } from '../../app/cadastro/service/cadastro.service';
-
 
 @Component({
   selector: 'app-cadastro',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.scss'
 })
@@ -15,40 +70,42 @@ export class CadastroComponent {
 
   email = '';
   password = '';
+  erro = '';
+  sucesso = '';
+  loading = false;
+  showPassword = false;
 
-
-constructor(
-  private cadastroService: CadastroService,
-  private router: Router
-) {}
+  constructor(
+    private cadastroService: CadastroService,
+    private router: Router
+  ) {}
 
   cadastrar() {
+    this.erro = '';
+    this.sucesso = '';
 
-    const dados = {
-      email: this.email,
-      password: this.password
-    };
+    if (this.password.length < 6) {
+      this.erro = 'A senha deve ter no mínimo 6 caracteres';
+      return;
+    }
 
-    this.cadastroService.register(dados)
+    this.loading = true;
+
+    this.cadastroService.register({ email: this.email, password: this.password })
       .subscribe({
-
         next: () => {
-
-          alert('Conta criada com sucesso!');
-
-          this.router.navigate(['/login-form']);
+          this.sucesso = 'Conta criada com sucesso! Redirecionando...';
+          this.loading = false;
+          setTimeout(() => this.router.navigate(['/login-form']), 1500);
         },
-
         error: (err: any) => {
-
-          console.error(err);
-
-          alert('Erro ao cadastrar usuário');
+          this.erro = err?.error?.error || 'Erro ao cadastrar. Tente novamente.';
+          this.loading = false;
         }
       });
   }
 
-    voltar() {
+  voltar() {
     this.router.navigate(['/login']);
   }
 }

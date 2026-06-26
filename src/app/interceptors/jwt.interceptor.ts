@@ -4,15 +4,14 @@ import {
 
 export const jwtInterceptor: HttpInterceptorFn = (req, next) => {
 
-  const token = localStorage.getItem('token');
+  // Não enviar JWT para login e cadastro
+  const publicRoutes = [
+    '/auth/login',
+    '/auth/register'
+  ];
 
-  if (token) {
-
-    req = req.clone({
-      setHeaders: {
-        Authorization: `Bearer ${token}`
-      }
-    });
+  if (publicRoutes.some(route => req.url.includes(route))) {
+    return next(req);
   }
 
   return next(req);

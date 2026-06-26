@@ -12,13 +12,6 @@ import {
   trigger
 } from "./chunk-LAADMNW4.js";
 import {
-  RouterLink,
-  RouterLinkActive,
-  RouterModule
-} from "./chunk-U24IJHOL.js";
-import "./chunk-6QD6BPEK.js";
-import "./chunk-6776CIH3.js";
-import {
   Ripple,
   RippleModule
 } from "./chunk-MPYB427A.js";
@@ -36,6 +29,13 @@ import {
   UniqueComponentId,
   zindexutils
 } from "./chunk-SWGLL5SW.js";
+import {
+  RouterLink,
+  RouterLinkActive,
+  RouterModule
+} from "./chunk-U24IJHOL.js";
+import "./chunk-6QD6BPEK.js";
+import "./chunk-6776CIH3.js";
 import {
   CommonModule,
   DOCUMENT,

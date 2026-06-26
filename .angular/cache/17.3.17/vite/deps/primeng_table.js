@@ -42,10 +42,6 @@ import {
   trigger
 } from "./chunk-LAADMNW4.js";
 import {
-  DomSanitizer
-} from "./chunk-6QD6BPEK.js";
-import "./chunk-6776CIH3.js";
-import {
   ButtonDirective,
   ButtonModule
 } from "./chunk-RZSLZT7Z.js";
@@ -80,6 +76,10 @@ import {
   UniqueComponentId,
   zindexutils
 } from "./chunk-SWGLL5SW.js";
+import {
+  DomSanitizer
+} from "./chunk-6QD6BPEK.js";
+import "./chunk-6776CIH3.js";
 import {
   CommonModule,
   DOCUMENT,
