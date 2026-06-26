@@ -13,13 +13,11 @@
   image-rendering: auto;
 }
 
-/* Ensure <picture> is the positioning context so the button can sit over the image */
 picture {
   position: relative;
   display: block;
 }
 
-/* place the hero button centered over the picture image */
 picture .hero-button {
   position: absolute;
   top: 70%;
@@ -35,10 +33,8 @@ picture .hero-button {
   background-color: green;
 }
 
-/* SVG shape divider placed on top of the picture edge */
 .custom-shape-divider-bottom-1772762838 {
   position: absolute;
-  /* nudge the divider a few pixels lower to avoid a hairline seam */
   bottom: -6px;
   left: 0;
   width: 100%;
@@ -291,10 +287,10 @@ p-button {
 .hero-button {
   display: inline-block;
   align-items: center;
-  background-color: #E2B615; /* verde claro */
-  color: #ffffff; /* texto branco */
+  background-color: #E2B615;
+  color: #ffffff; 
   text-decoration: none;
-  padding: 22px 36px; /* maior botão */
+  padding: 22px 36px; 
   font-size: 15px; /* aumentar tamanho do texto */
   line-height: 1; 
   border-radius: 9999px;
@@ -309,7 +305,7 @@ p-button {
 .hero-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 36px rgba(0,0,0,0.16);
-  background-color: #6fd06a; /* hover: verde um pouco mais escuro */
+  background-color: #6fd06a; 
 }
 
 .hero-shape {

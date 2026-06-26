@@ -7,9 +7,7 @@
       <h1>Alunos</h1>
       <span class="page-sub">{{ studentsList.length }} alunos cadastrados</span>
     </div>
-    <!-- <button class="btn-add" (click)="goToCreatePage()">
-      <i class="pi pi-plus"></i> Adicionar Aluno
-    </button> -->
+   
     <button *ngIf="loginService.isAdmin()" class="btn-add" (click)="goToCreatePage()">
       <i class="pi pi-plus"></i> Adicionar Aluno
     </button>
@@ -60,13 +58,7 @@
             <div class="action-buttons">
               <button class="action-btn view" (click)="openModalToLook(student)" title="Visualizar">
                 <i class="pi pi-eye"></i>
-              </button>
-              <!-- <button class="action-btn edit"   (click)="openPageToEdit(student)"  title="Editar">
-                <i class="pi pi-pencil"></i>
-              </button>
-              <button class="action-btn delete" (click)="openModalToDelete(student)" title="Excluir">
-                <i class="pi pi-trash"></i>
-              </button> -->
+        
               <button *ngIf="loginService.isAdmin()" class="action-btn edit" (click)="openPageToEdit(student)"
                 title="Editar">
                 <i class="pi pi-pencil"></i>

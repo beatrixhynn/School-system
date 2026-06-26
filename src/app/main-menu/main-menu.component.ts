@@ -33,9 +33,7 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('scatterImg', { static: false }) scatterImg?: ElementRef<HTMLImageElement>;
 
   private rafScheduled = false;
-  private baseScatter = -42.06; // base translateY for scatter image
-
-  // simple string-array for string-based carousel usage in the template
+  private baseScatter = -42.06; 
 
   images: string[] = [
 
@@ -56,9 +54,7 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    // initial update
     this.updatePositions();
-    // listen to scroll using RAF for smoothness
     window.addEventListener('scroll', this.scrollHandler, { passive: true });
     window.addEventListener('resize', this.scrollHandler);
   }
@@ -70,7 +66,7 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnDestroy {
       window.removeEventListener('scroll', this.scrollHandler);
       window.removeEventListener('resize', this.scrollHandler);
     } catch (e) {
-      // ignore
+  
     }
   }
 
@@ -89,14 +85,12 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnDestroy {
       if (!this.bercarioContent) return;
       const rect = this.bercarioContent.nativeElement.getBoundingClientRect();
       const vh = window.innerHeight || document.documentElement.clientHeight;
-      // progress: 0 when section bottom is above viewport, 1 when section top reaches bottom of viewport
       const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + rect.height)));
 
-      const move = progress * 30; // max movement in px
+      const move = progress * 30; 
 
-      // scatter moves more visibly, bercario image moves subtly
-      const scatterOffset = this.baseScatter + move * 0.6; // negative base + positive move moves it down
-      const bercarioOffset = move * 0.18; // small movement for main image
+      const scatterOffset = this.baseScatter + move * 0.6; 
+      const bercarioOffset = move * 0.18; 
 
       if (this.scatterImg && this.scatterImg.nativeElement) {
         this.scatterImg.nativeElement.style.transform = `translateY(${scatterOffset}px)`;
@@ -106,7 +100,6 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnDestroy {
         this.bercarioImg.nativeElement.style.transform = `translateY(${bercarioOffset}px)`;
       }
     } catch (e) {
-      // ignore errors
     }
   }
 
