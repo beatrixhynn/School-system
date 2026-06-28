@@ -31,31 +31,6 @@ import { ThreeColumnsComponent } from '../three-columns/three-columns.component'
 })
 export class AboutUsComponent implements OnInit {
 
-//   private observer!: IntersectionObserver;
-
-// private scrollY = 0;
-
-//   @HostListener('window:scroll')
-//   onScroll() {
-//     this.scrollY = window.scrollY;
-//     this._updateBlobs();
-//   }
-
-//   private _updateBlobs() {
-//     const blobs = document.querySelectorAll<HTMLElement>('.blob');
-//     blobs.forEach((blob, i) => {
-//       const dir = i % 2 === 0 ? 1 : -1;
-//       const offset = this.scrollY * 0.08 * dir;
-//       blob.style.transform = `translate(-50%, calc(-50% + ${offset}px))`;
-//     });
-//   }
-
-//   openWhatsApp() {
-//     window.open('https://wa.me/5511999999999', '_blank');
-//   }
-
-//   ngOnInit() {}
-// }
 private observer!: IntersectionObserver;
   private scrollY = 0;
 

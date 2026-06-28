@@ -1,0 +1,23 @@
+<div class="about-block" [class.reverse]="reverse">
+  
+  <div class="about-text">
+    <span class="eyebrow">{{ eyebrow }}</span>
+
+    <h2>
+      {{ title }} <strong>{{ highlight }}</strong>
+    </h2>
+
+    <p class="subtitle">{{ subtitle }}</p>
+
+    <p class="body-text">{{ text }}</p>
+  </div>
+
+  <div class="about-image-wrap">
+
+    <div class="blob" [class.blob-blue]="blobColor === 'blue'"
+                      [class.blob-yellow]="blobColor === 'yellow'"></div>
+
+    <img [src]="image" class="about-img">
+  </div>
+
+</div>
