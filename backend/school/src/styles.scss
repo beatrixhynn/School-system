@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+// ...existing code...
+.p-menubar.custom-menubar {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  // box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+
+.p-menubar.custom-menubar .p-menuitem-link,
+.p-menubar.custom-menubar .p-menuitem-text {
+  color: #111;
+}
+.logo-img {
+  width: 40px;
+  height: auto;
+}
+/* ...existing code... */

@@ -1,0 +1,158 @@
+<p-toast></p-toast>
+
+<div class="page-wrapper">
+
+  <div class="page-header">
+    <div>
+      <h1>Alunos</h1>
+      <span class="page-sub">{{ studentsList.length }} alunos cadastrados</span>
+    </div>
+   
+    <button *ngIf="loginService.isAdmin()" class="btn-add" (click)="goToCreatePage()">
+      <i class="pi pi-plus"></i> Adicionar Aluno
+    </button>
+  </div>
+
+  <div *ngIf="messages.length > 0" class="messages-wrap">
+    <p-messages [(value)]="messages" [enableService]="false" [closable]="true"></p-messages>
+  </div>
+
+  <div class="table-card">
+
+    <!-- Barra de pesquisa -->
+    <div class="table-toolbar">
+      <div class="search-wrap">
+        <i class="pi pi-search"></i>
+        <input #searchInput type="text" placeholder="Pesquisar por nome, email ou responsável..."
+          (input)="dt.filterGlobal(searchInput.value, 'contains')" />
+      </div>
+    </div>
+
+    <p-table #dt [value]="studentsList" [tableStyle]="{'min-width': '60rem'}" [paginator]="true" [rows]="10"
+      [rowsPerPageOptions]="[5, 10, 20]" [globalFilterFields]="['name','email','parentName']"
+      styleClass="p-datatable-sm">
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+          <th pSortableColumn="name">Nome <p-sortIcon field="name"></p-sortIcon></th>
+          <th>Nascimento</th>
+          <th>Responsável</th>
+          <th>Celular</th>
+          <th>Email</th>
+          <th>Turma</th>
+          <th style="text-align:center">Ações</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-student>
+        <tr>
+          <td><span class="badge-id">#{{ student.id }}</span></td>
+          <td><strong>{{ student.name }}</strong></td>
+          <td>{{ student.birthDate | date:'dd/MM/yyyy' }}</td>
+          <td>{{ student.parentName }}</td>
+          <td>{{ student.parentCellphone }}</td>
+          <td>{{ student.email }}</td>
+          <td><span class="badge-turma">{{ student.grade?.section }}</span></td>
+          <td>
+            <div class="action-buttons">
+              <button class="action-btn view" (click)="openModalToLook(student)" title="Visualizar">
+                <i class="pi pi-eye"></i>
+        
+              <button *ngIf="loginService.isAdmin()" class="action-btn edit" (click)="openPageToEdit(student)"
+                title="Editar">
+                <i class="pi pi-pencil"></i>
+              </button>
+
+              <button *ngIf="loginService.isAdmin()" class="action-btn delete" (click)="openModalToDelete(student)"
+                title="Excluir">
+                <i class="pi pi-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="8" class="empty-row">Nenhum aluno encontrado.</td>
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </div>
+</div>
+
+<!-- MODAL EXCLUIR -->
+<p-dialog [(visible)]="visibleModalDelete" [style]="{width:'440px'}" [modal]="true" [draggable]="false"
+  styleClass="custom-dialog">
+  <ng-template pTemplate="header">
+    <div class="dialog-header">
+      <div class="dialog-icon danger">🗑️</div>
+      <div>
+        <p class="dialog-eyebrow">Atenção</p>
+        <span class="dialog-title">Excluir Aluno</span>
+      </div>
+    </div>
+  </ng-template>
+  <div class="dialog-body">
+    <p>Você está prestes a excluir <strong>{{ modelToDelete?.name }}</strong>.</p>
+    <p class="dialog-warn"> Essa ação não pode ser desfeita.</p>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="dialog-footer">
+      <button class="dlg-btn cancel" (click)="visibleModalDelete = false">Cancelar</button>
+      <button class="dlg-btn confirm-delete" (click)="doDelete()">
+        <i class="pi pi-trash"></i> Excluir
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+<!-- MODAL VISUALIZAR -->
+<p-dialog [(visible)]="visibleModalToSeeModel" [style]="{width:'480px'}" [modal]="true" [draggable]="false"
+  styleClass="custom-dialog">
+  <ng-template pTemplate="header">
+    <div class="dialog-header">
+      <div class="dialog-icon info">👤</div>
+      <div>
+        <p class="dialog-eyebrow">Detalhes</p>
+        <span class="dialog-title">{{ modelToLook?.name }}</span>
+      </div>
+    </div>
+  </ng-template>
+  <div class="dialog-body detail-grid">
+    <div class="detail-item">
+      <span class="detail-label">Nome</span>
+      <span class="detail-value">{{ modelToLook?.name }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Nascimento</span>
+      <span class="detail-value">{{ modelToLook?.birthDate | date:'dd/MM/yyyy' }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Responsável</span>
+      <span class="detail-value">{{ modelToLook?.parentName }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Celular</span>
+      <span class="detail-value">{{ modelToLook?.parentCellphone }}</span>
+    </div>
+    <div class="detail-item full">
+      <span class="detail-label">Email</span>
+      <span class="detail-value">{{ modelToLook?.email }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Turma</span>
+      <span class="detail-value">{{ modelToLook?.grade?.section }}</span>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="dialog-footer">
+      <button class="dlg-btn cancel" (click)="visibleModalToSeeModel = false">Fechar</button>
+      <button class="dlg-btn edit" (click)="openPageToEdit(modelToLook!); visibleModalToSeeModel = false">
+        <i class="pi pi-pencil"></i> Editar
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>

@@ -1,0 +1,96 @@
+
+<p-toast></p-toast>
+
+<div class="form-page">
+  <div class="form-card">
+
+    <div class="form-header">
+      <div>
+        <span class="form-eyebrow">COLÉGIO LUMIER</span>
+        <h2>{{ idschoolMeal ? 'Editar Refeição' : 'Cadastro de Refeição' }}</h2>
+      </div>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <form [formGroup]="form" (ngSubmit)="doSubmitForm()" novalidate>
+      <div class="form-grid">
+
+        <div class="form-group full">
+          <label for="nome">Nome</label>
+          <input
+            id="nome"
+            type="text"
+            pInputText
+            formControlName="nome"
+            placeholder="Ex: Almoço Infantil"
+            [class.input-invalid]="form.get('nome')?.invalid && form.get('nome')?.touched"/>
+          <small class="error-msg"
+            *ngIf="form.get('nome')?.invalid && form.get('nome')?.touched">
+            ⚠️ Nome obrigatório — mínimo 3 letras
+          </small>
+        </div>
+
+        <div class="form-group full">
+          <label for="descricao">Descrição</label>
+          <input
+            id="descricao"
+            type="text"
+            pInputText
+            formControlName="descricao"
+            placeholder="Ex: Arroz, feijão, frango grelhado e salada"
+            [class.input-invalid]="form.get('descricao')?.invalid && form.get('descricao')?.touched"/>
+          <small class="error-msg"
+            *ngIf="form.get('descricao')?.invalid && form.get('descricao')?.touched">
+            ⚠️ Descrição obrigatória — mínimo 5 caracteres
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="horario">Horário</label>
+          <p-calendar
+            formControlName="horario"
+            [timeOnly]="true"
+            hourFormat="24"
+            placeholder="Ex: 12:30"
+            [style]="{'width':'100%'}"
+            [ngClass]="{'p-invalid': form.get('horario')?.invalid && form.get('horario')?.touched}">
+          </p-calendar>
+          <small class="error-msg"
+            *ngIf="form.get('horario')?.invalid && form.get('horario')?.touched">
+            ⚠️ Horário obrigatório
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="tipoRestricao">Tipo de Restrição</label>
+          <p-dropdown
+            id="tipoRestricao"
+            formControlName="tipoRestricao"
+            [options]="tiposRestricao"
+            placeholder="Selecione um tipo"
+            [style]="{'width':'100%'}"
+            [ngClass]="{'p-invalid': form.get('tipoRestricao')?.invalid && form.get('tipoRestricao')?.touched}">
+          </p-dropdown>
+          <small class="error-msg"
+            *ngIf="form.get('tipoRestricao')?.invalid && form.get('tipoRestricao')?.touched">
+            ⚠️ Tipo de restrição obrigatório
+          </small>
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-cancel"
+          (click)="router.navigateByUrl('school-meals')">
+          Cancelar
+        </button>
+        <button type="submit" class="btn-submit" [disabled]="form.invalid">
+          <i class="pi" [ngClass]="idschoolMeal ? 'pi-check' : 'pi-plus'"></i>
+          {{ idschoolMeal ? 'Salvar Alterações' : 'Cadastrar Refeição' }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

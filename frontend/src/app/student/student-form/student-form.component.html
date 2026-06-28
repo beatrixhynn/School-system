@@ -1,0 +1,101 @@
+
+<p-toast></p-toast>
+
+<div class="form-page">
+
+    <div class="form-card">
+
+        <div class="form-header">
+            <div>
+                <span class="form-eyebrow">COLÉGIO LUMIER</span>
+                <h2>{{ idstudent ? 'Editar Aluno' : 'Cadastro de Aluno' }}</h2>
+            </div>
+        </div>
+
+        <div class="form-divider"></div>
+
+        <form [formGroup]="form" (submit)="doSubmitForm()">
+
+            <div class="form-grid">
+
+                <div class="form-group full">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" pInputText formControlName="name" placeholder="Ex: João da Silva"
+                        [class.input-invalid]="form.get('name')?.invalid && form.get('name')?.touched" />
+                    <small class="error-msg" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+                         Nome deve ter no mínimo 3 letras
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">Data de Nascimento</label>
+                    <p-calendar formControlName="birthDate" dateFormat="dd/mm/yy" placeholder="dd/mm/aaaa"
+                        [style]="{'width':'100%'}"
+                        [ngClass]="{'p-invalid': form.get('birthDate')?.invalid && form.get('birthDate')?.touched}">
+                    </p-calendar>
+                    <small class="error-msg" *ngIf="form.get('birthDate')?.invalid && form.get('birthDate')?.touched">
+                         Data de nascimento obrigatória
+                    </small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="gradeId">Turma</label>
+        
+                    <p-dropdown id="gradeId" formControlName="gradeId" [options]="gradesList" optionLabel="section"
+                        optionValue="id" placeholder="Selecione uma turma" [style]="{'width':'100%'}"
+                        [ngClass]="{'p-invalid': form.get('gradeId')?.invalid && form.get('gradeId')?.touched}">
+                    </p-dropdown>
+                    <small class="error-msg" *ngIf="form.get('gradeId')?.invalid && form.get('gradeId')?.touched">
+                         A turma é obrigatória
+                    </small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="parentName">Nome do Responsável</label>
+                    <input type="text" id="parentName" pInputText formControlName="parentName"
+                        placeholder="Ex: Maria da Silva"
+                        [class.input-invalid]="form.get('parentName')?.invalid && form.get('parentName')?.touched" />
+                    <small class="error-msg" *ngIf="form.get('parentName')?.invalid && form.get('parentName')?.touched">
+                         Nome do responsável é obrigatório
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="parentCellphone">Celular do Responsável</label>
+                    <input type="text" id="parentCellphone" pInputText formControlName="parentCellphone"
+                        placeholder="Ex: 11987654321"
+                        [class.input-invalid]="form.get('parentCellphone')?.invalid && form.get('parentCellphone')?.touched" />
+                    <small class="error-msg"
+                        *ngIf="form.get('parentCellphone')?.invalid && form.get('parentCellphone')?.touched">
+                         Digite um número com 11 dígitos (ex: 11987654321)
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email do Responsável</label>
+                    <input type="email" id="email" pInputText formControlName="email" placeholder="Ex: maria@email.com"
+                        [class.input-invalid]="form.get('email')?.invalid && form.get('email')?.touched" />
+                    <small class="error-msg" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+                         Email inválido ou obrigatório
+                    </small>
+                </div>
+
+            </div>
+
+    
+            <div class="form-actions">
+                <button type="button" class="btn-cancel" (click)="router.navigateByUrl('students')">
+                    Cancelar
+                </button>
+                <button type="submit" class="btn-submit" [disabled]="form.invalid">
+                    <i class="pi" [ngClass]="idstudent ? 'pi-check' : 'pi-user-plus'"></i>
+                    {{ idstudent ? 'Salvar Alterações' : 'Cadastrar Aluno' }}
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>

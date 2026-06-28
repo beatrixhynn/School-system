@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+$blue:    #64b5f6;
+$blue-dk: #1a6fa8;
+$blue-lt: #e8f4fd;
+$red:     #E7374A;
+$yellow:  #E2B615;
+$ink:     #1e293b;
+$muted:   #64748b;
+$white:   #ffffff;
+$bg:      #f5faff;
+
+:host {
+  display: block;
+  font-family: 'Nunito', sans-serif;
+}
+
+// ── PAGE ─────────────────────────────────────
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $bg;
+  padding: 24px;
+}
+
+// ── CARD ─────────────────────────────────────
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: $white;
+  border-radius: 28px;
+  padding: 40px 36px;
+  border: 2px solid rgba(100,181,246,0.2);
+
+  box-shadow:
+    0 0 0 6px rgba(100,181,246,0.08),
+    0 16px 48px rgba(100,181,246,0.14);
+
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+// ── HEADER ───────────────────────────────────
+.login-header {
+  text-align: center;
+  margin-bottom: 16px;
+
+  .eyebrow {
+    color: $red;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: $ink;
+    margin: 6px 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $muted;
+    margin: 0;
+  }
+}
+
+.form-divider {
+  height: 2px;
+  background: linear-gradient(90deg, $blue-lt, transparent);
+  border-radius: 2px;
+  margin: 20px 0 26px;
+}
+
+// ── FORM ─────────────────────────────────────
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+
+  label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: $ink;
+  }
+}
+
+// ── INPUT ────────────────────────────────────
+.input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fbfdff;
+  border: 2px solid #e2eaf4;
+  border-radius: 12px;
+  padding: 0 12px;
+  height: 46px;
+  transition: all 0.2s ease;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    color: $muted;
+    flex-shrink: 0;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: transparent;
+    color: $ink;
+
+    &::placeholder {
+      color: #b0bec5;
+    }
+  }
+
+  &:focus-within {
+    border-color: $blue;
+    box-shadow: 0 0 0 3px rgba(100,181,246,0.18);
+    background: $white;
+  }
+
+  &.input-error {
+    border-color: $red;
+    box-shadow: 0 0 0 3px rgba(231,55,74,0.12);
+  }
+}
+
+// ── TOGGLE SENHA ─────────────────────────────
+.toggle-pw {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: $muted;
+  display: flex;
+  align-items: center;
+
+  i {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    color: $blue-dk;
+  }
+}
+
+// ── ERROS ────────────────────────────────────
+.error-msg {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: $red;
+}
+
+.error-banner {
+  background: rgba(231,55,74,0.08);
+  color: $red;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+// ── BOTÃO ────────────────────────────────────
+.btn-submit {
+  width: 100%;
+  margin-top: 10px;
+  height: 46px;
+  border-radius: 12px;
+  border: none;
+  background: $blue;
+  color: $white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  box-shadow: 0 6px 20px rgba(100,181,246,0.35);
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: $blue-dk;
+    transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// ── FOOTER ───────────────────────────────────
+.login-footer {
+  margin-top: 20px;
+  text-align: center;
+
+  .back-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $muted;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    &:hover {
+      color: $blue-dk;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+<!-- <div class="cadastro-wrapper">
+
+  <div class="cadastro-header">
+    <span class="eyebrow">COLÉGIO LUMIER</span>
+
+    <h1>Criar sua <strong>Conta</strong></h1>
+
+    <p>Preencha os dados para realizar seu cadastro.</p>
+  </div>
+
+  <div class="form-card">
+
+    <div class="card-shape"></div>
+
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round">
+
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <line x1="19" y1="8" x2="19" y2="14"/>
+        <line x1="22" y1="11" x2="16" y2="11"/>
+
+      </svg>
+    </div>
+
+    <h2>Cadastro</h2>
+
+    <input
+      type="email"
+      [(ngModel)]="email"
+      placeholder="Digite seu email"
+    />
+
+    <input
+      type="password"
+      [(ngModel)]="password"
+      placeholder="Digite sua senha"
+    />
+
+    <button (click)="cadastrar()">
+      Criar Conta
+    </button>
+
+    <a (click)="voltar()">
+      ← Voltar para Login
+    </a>
+
+  </div>
+
+</div> -->
+
+<div class="login-wrapper">
+
+  <div class="login-card">
+
+    <div class="login-header">
+      <span class="eyebrow">COLÉGIO LUMIER</span>
+      <h2>Criar sua <strong>conta</strong></h2>
+      <p>Preencha os dados para se cadastrar 📝</p>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <form (ngSubmit)="cadastrar()" #form="ngForm" novalidate>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-wrap" [class.input-error]="emailRef.invalid && emailRef.touched">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="seu@email.com"
+            required
+            email
+            #emailRef="ngModel"/>
+        </div>
+        <small class="error-msg" *ngIf="emailRef.invalid && emailRef.touched">
+          ⚠️ Email inválido ou obrigatório
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <div class="input-wrap" [class.input-error]="passwordRef.invalid && passwordRef.touched">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <input
+            id="password"
+            [type]="showPassword ? 'text' : 'password'"
+            name="password"
+            [(ngModel)]="password"
+            placeholder="••••••••"
+            required
+            minlength="6"
+            #passwordRef="ngModel"/>
+          <button type="button" class="toggle-pw" (click)="showPassword = !showPassword">
+            <i class="pi" [ngClass]="showPassword ? 'pi-eye-slash' : 'pi-eye'"></i>
+          </button>
+        </div>
+        <small class="error-msg" *ngIf="passwordRef.invalid && passwordRef.touched">
+          ⚠️ Senha obrigatória — mínimo 6 caracteres
+        </small>
+      </div>
+
+      <div class="error-banner" *ngIf="erro">
+        ⚠️ {{ erro }}
+      </div>
+
+      <div class="success-banner" *ngIf="sucesso">
+        ✅ {{ sucesso }}
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="form.invalid || loading">
+        <span *ngIf="!loading">
+          <i class="pi pi-user-plus"></i>
+          Criar conta
+        </span>
+        <span *ngIf="loading">
+          <i class="pi pi-spin pi-spinner"></i>
+          Criando...
+        </span>
+      </button>
+
+    </form>
+
+    <div class="login-footer">
+      <a (click)="voltar()" class="back-link">
+        <i class="pi pi-arrow-left"></i> Voltar
+      </a>
+    </div>
+
+  </div>
+</div>

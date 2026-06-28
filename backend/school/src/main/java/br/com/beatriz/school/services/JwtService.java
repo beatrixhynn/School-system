@@ -1,0 +1,41 @@
+package br.com.beatriz.school.services;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
+
+import javax.crypto.SecretKey;
+import java.nio.charset.StandardCharsets;
+import java.util.Date;
+
+@Service
+public class JwtService {
+
+    private static final String SECRET = "sua_chave_secreta_muito_longa_aqui_min_256bits";
+
+    public String generateToken(UserDetails user) {
+        return Jwts.builder()
+                .setSubject(user.getUsername())
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24)) // 24h
+                .signWith(getKey(), SignatureAlgorithm.HS256)
+                .compact();
+    }
+
+    public String extractUsername(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(getKey()).build()
+                .parseClaimsJws(token)
+                .getBody().getSubject();
+    }
+
+    public boolean isTokenValid(String token, UserDetails user) {
+        return extractUsername(token).equals(user.getUsername());
+    }
+
+    private SecretKey getKey() {
+        return Keys.hmacShaKeyFor(SECRET.getBytes(StandardCharsets.UTF_8));
+    }
+}

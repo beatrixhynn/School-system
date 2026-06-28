@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  // font-family: 'Poppins', sans-serif;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+// ...existing code...
+.p-menubar.custom-menubar {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  // box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+}
+
+.p-menubar.custom-menubar .p-menuitem-link,
+.p-menubar.custom-menubar .p-menuitem-text {
+  color: #111;
+}
+.logo-img {
+  width: 40px;
+  height: auto;
+}
+/* Remove default top padding — header is not fixed in this layout, so no offset needed */
+body {
+  /* offset so page content is not hidden behind the fixed header */
+  padding-top: 80px; /* match header height in header.component.scss */
+}
+/* ...existing code... */
+/* targeting the actual generated button */
+.p-button.btn-add {
+  margin-bottom: 200px !important;
+  display: inline-block;
+}
+
+.custom-shape-divider-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+}
+
+.custom-shape-divider-top svg {
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+.custom-shape-divider-top .shape-fill {
+  fill: #ffffff;
+}
+
+/* Global header link styles for p-menubar */
+.p-menubar.custom-menubar .header-link,
+.custom-menubar .header-link {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #222;
+  font-family: 'Nunito', sans-serif;
+}
+
+.p-menubar.custom-menubar .header-links-center .header-link,
+.custom-menubar .header-links-center .header-link {
+  font-size: 1.2rem; 
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .p-menubar.custom-menubar .header-links-center .header-link,
+  .custom-menubar .header-links-center .header-link {
+    font-size: 1rem; /* reduce on smaller screens */
+  }
+}
+
+// Força Nunito nos dialogs do PrimeNG globalmente
+.p-dialog,
+.p-dialog .p-dialog-header,
+.p-dialog .p-dialog-content,
+.p-dialog .p-dialog-footer,
+.p-dialog p,
+.p-dialog span:not([class*="pi"]),
+.p-dialog h1,
+.p-dialog h2,
+.p-dialog h3,
+.p-dialog label,
+.p-dialog button:not([class*="pi"]),
+.p-dialog strong,
+.p-dialog small {
+  font-family: 'Nunito', sans-serif !important;
+}

@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:host { display: block; font-family: 'Nunito', sans-serif; }
+
+$blue:    #64b5f6;
+$blue-dk: #1a6fa8;
+$blue-lt: #e8f4fd;
+$red:     #E7374A;
+$yellow:  #E2B615;
+$ink:     #1e293b;
+$muted:   #64748b;
+$white:   #ffffff;
+$bg:      #f5faff;
+
+.about-section {
+  // background: $bg;
+  padding: 100px 40px;
+}
+
+.about-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.about-block {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+
+  &.reverse { flex-direction: row-reverse; }
+
+  @media (max-width: 860px) {
+    flex-direction: column !important;
+    gap: 40px;
+  }
+}
+
+.about-text {
+  flex: 1;
+
+  .eyebrow {
+    display: inline-block;
+    color: $red;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 18px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 50%;
+      width: 10px; height: 2px;
+      background: $red;
+    }
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: $ink;
+    line-height: 1.15;
+    margin-bottom: 14px;
+
+    strong { color: $blue; font-weight: 900; }
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: $blue-dk;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+
+  .body-text {
+    font-size: 0.97rem;
+    color: $muted;
+    line-height: 1.85;
+    font-weight: 600;
+  }
+}
+
+.about-image-wrap {
+  flex: 0 0 44%;
+  position: relative;
+
+  @media (max-width: 860px) { width: 100%; }
+}
+
+.image-ring {
+  position: absolute;
+  inset: -10px;
+  border-radius: 28px;
+  // background: $blue-lt;
+  z-index: 0;
+  border: 3px solid rgba(100,181,246,0.3);
+}
+
+.about-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow:
+    0 0 0 4px $white,
+    0 0 0 7px rgba(100,181,246,0.25),
+    0 16px 48px rgba(100,181,246,0.18);
+  display: block;
+
+  @media (max-width: 860px) { height: 260px; }
+}
+
+$white: #ffffff;
+$blue: #64b5f6;
+$blue-dk: #1a6fa8;
+$yellow: #fbbf24;
+
+.wave-banner {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.wave-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.wave-overlay {
+  position: absolute;
+  inset: 0;
+  // background: linear-gradient(135deg,
+  //   rgba(26,111,168,0.72) 0%,
+  //   rgba(100,181,246,0.55) 100%);
+  // z-index: 1;
+}
+
+// .eyebrow {
+//   color: red;
+//   font-weight: 800;
+//   font-family: 'Nunito', sans-serif;
+
+
+// }
+
+.wave-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding: 0 24px;
+  animation: fadeUp 0.7s cubic-bezier(.22, 1, .36, 1) both;
+
+  .wave-eyebrow {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 5px 18px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(4px);
+  }
+
+  h2 {
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-weight: 900;
+    color: $white;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 600;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+}
+
+.wave-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  color: $blue-dk;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+
+  i {
+    font-size: 1.1rem;
+    color: #25d366;
+  }
+
+  &:hover {
+    background: $yellow;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);
+
+    i {
+      color: white;
+    }
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ── BLOCO ─────────────────────────────────────
+// Remove o .reverse — agora controlamos manualmente
+.about-block {
+  display: flex;
+  align-items: center;
+  gap: 72px;
+  padding: 0 40px;
+  margin: 100px;
+  margin-top: 50px;
+
+  // bloco 2: imagem à esquerda naturalmente (sem reverse)
+  &:nth-child(2) {
+    flex-direction: row; // já vem assim no HTML
+  }
+
+  @media (max-width: 860px) {
+    flex-direction: column !important;
+    gap: 40px;
+  }
+}
+
+// ── IMAGEM WRAP ───────────────────────────────
+.about-image-wrap {
+  flex: 0 0 44%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 860px) {
+    width: 100%;
+  }
+}
+
+// ── BLOB ──────────────────────────────────────
+.blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 420px;
+  border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+  z-index: 0;
+  animation: blobMorph 8s ease-in-out infinite;
+  transition: transform 0.1s linear;
+  pointer-events: none;
+
+  &.blob-blue {
+    background: radial-gradient(ellipse at 40% 40%,
+        rgba(100, 181, 246, 0.22) 0%,
+        rgba(100, 181, 246, 0.06) 70%,
+        transparent 100%);
+  }
+
+  &.blob-yellow {
+    background: radial-gradient(ellipse at 60% 40%,
+        rgba(226, 182, 21, 0.2) 0%,
+        rgba(226, 182, 21, 0.05) 70%,
+        transparent 100%);
+    animation-delay: -4s;
+    border-radius: 45% 55% 40% 60% / 60% 40% 55% 45%;
+  }
+
+  @media (max-width: 860px) {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@keyframes blobMorph {
+
+  0%,
+  100% {
+    border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+  }
+
+  25% {
+    border-radius: 40% 60% 45% 55% / 55% 45% 60% 40%;
+  }
+
+  50% {
+    border-radius: 55% 45% 60% 40% / 40% 60% 45% 55%;
+  }
+
+  75% {
+    border-radius: 45% 55% 40% 60% / 60% 40% 55% 45%;
+  }
+}
+
+// ── IMAGEM ────────────────────────────────────
+.about-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow:
+    0 0 0 4px #fff,
+    0 0 0 7px rgba(100, 181, 246, 0.2),
+    0 16px 48px rgba(100, 181, 246, 0.15);
+  display: block;
+
+  @media (max-width: 860px) {
+    height: 260px;
+  }
+}
+
+// ── ANIMAÇÃO DE ENTRADA ───────────────────────
+
+// estado inicial — invisível e deslocado
+.about-block {
+  .about-text {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.22,1,.36,1);
+  }
+
+  .about-image-wrap {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.22,1,.36,1);
+  }
+
+  // bloco 2 — direções invertidas
+  &:nth-child(2) {
+    .about-text {
+      transform: translateX(40px);
+    }
+    .about-image-wrap {
+      transform: translateX(-40px);
+    }
+  }
+
+  // quando visível — tudo volta ao lugar
+  &.visible {
+    .about-text,
+    .about-image-wrap {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .about-image-wrap {
+      transition-delay: 0.15s;
+    }
+  }
+}
