@@ -38,9 +38,7 @@
         </p>
       </div>
     </div>
-
-
-
+ 
 <section class="wave-banner">
   <img src="../../assets/stacked-waves-haikei (1).svg" alt="" class="wave-bg-img">
 
@@ -56,29 +54,29 @@
     </button>
   </div>
 </section>
+ <app-three-columns></app-three-columns> 
+ -->
 
-<app-three-columns></app-three-columns> -->
-
-<app-about-block
+ <app-about-block
   eyebrow="COLÉGIO LUMIER"
   title="Quem"
-  highlight="Somos"
-  subtitle="Um lar de amor, descobertas e aprendizado para o seu filho."
-  [text]="text1"
+  strong="Somos"
+  subtitle="Um lar de amor, descobertas e aprendizado"
+  [text]="quemSomosText"
   image="assets/desenho.jpg"
-  blobColor="blue">
-</app-about-block>
+  blobColor="blue"
+></app-about-block>
 
 <app-about-block
   eyebrow="NOSSA MISSÃO"
   title="Aprender"
-  highlight="Brincando"
-  subtitle="Cada dia é uma nova aventura de descobertas."
-  [text]="text2"
+  strong="Brincando"
+  subtitle="Cada dia é uma nova aventura"
+  [text]="missaoText"
   image="assets/escolinha.jpg"
+  [reverse]="true"
   blobColor="yellow"
-  [reverse]="true">
-</app-about-block>
+></app-about-block>
 
 <app-wave-banner></app-wave-banner>
 
