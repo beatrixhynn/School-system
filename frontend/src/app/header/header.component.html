@@ -1,103 +1,4 @@
-<!-- 
 
-<header class="navbar" [class.scrolled]="isScrolled">
-
-
-    <a routerLink="/main-menu" class="logo-link">
-      <img src="../../assets/logo.png" alt="Logo Colégio Lumier" class="logo-img">
-    </a>
-
-    <nav class="nav-links">
-
-      <a *ngFor="let link of item" [routerLink]="link.routerLink" class="nav-link" routerLinkActive="active">
-        {{ link.label }}
-      </a>
-
-    </nav>
-
-    <div class="nav-actions">
-
-      <button *ngIf="loginService.isAdmin()" class="admin-btn" (click)="toggleTieredMenu($event)">
-        <i class="pi pi-th-large"></i>
-        <span>Admin</span>
-      </button>
-
-
-      <button *ngIf="isLoggedIn()" class="logout-btn" (click)="logout()">
-        <i class="pi pi-sign-out"></i>
-        <span>Sair</span>
-      </button>
-
-      <p-dialog [(visible)]="showLogoutDialog" [style]="{width: '380px'}" [modal]="true" [draggable]="false"
-        [closable]="false" styleClass="logout-dialog">
-
-        <ng-template pTemplate="header">
-          <div class="logout-dialog-header">
-            <div class="logout-icon">👋</div>
-            <div>
-              <p class="logout-eyebrow">Atenção</p>
-              <span class="logout-title">Deseja sair?</span>
-            </div>
-          </div>
-        </ng-template>
-
-        <div class="logout-dialog-body">
-          <p>Você será desconectado da sua conta.</p>
-        </div>
-
-        <ng-template pTemplate="footer">
-          <div class="logout-dialog-footer">
-            <button class="dlg-btn cancel" (click)="showLogoutDialog = false">
-              Cancelar
-            </button>
-            <button class="dlg-btn confirm" (click)="confirmLogout()">
-              <i class="pi pi-sign-out"></i> Sim, sair
-            </button>
-          </div>
-        </ng-template>
-      </p-dialog>
-
-      <p-tieredMenu #tieredMenu [model]="items" [popup]="true" styleClass="custom-tiered">
-      </p-tieredMenu>
-
-      <button class="hamburger" (click)="menuVisible = !menuVisible" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-    </div>
-
-  </div>
-
-</header>
-
-<p-sidebar [(visible)]="menuVisible" position="right" styleClass="custom-sidebar">
-
-  <div class="sidebar-header">
-
-    <img src="../../assets/logo.png" alt="Logo" class="sidebar-logo">
-
-  </div>
-
-  <nav class="sidebar-nav">
-
-    <a *ngFor="let link of item" [routerLink]="link.routerLink" class="sidebar-link" (click)="menuVisible = false">
-      {{ link.label }}
-    </a>
-
-  </nav>
-
-  <div class="sidebar-footer">
-
-    <a class="sidebar-cta" (click)="openWhatsApp(); menuVisible = false">
-      <i class="pi pi-whatsapp"></i>
-      Fale pelo WhatsApp
-    </a>
-
-  </div>
-
-</p-sidebar> -->
 
 <p-toast position="top-right"></p-toast>
 
@@ -105,7 +6,6 @@
 
   <div class="navbar-inner">
 
-    <!-- Logo -->
     <a
       routerLink="/main-menu"
       class="logo-link">
@@ -117,7 +17,6 @@
 
     </a>
 
-    <!-- Navegação Desktop -->
     <nav class="nav-links">
 
       <a
@@ -132,10 +31,8 @@
 
     </nav>
 
-    <!-- Botões -->
     <div class="nav-actions">
 
-      <!-- Admin -->
       <button
         *ngIf="loginService.isAdmin()"
         class="admin-btn"
@@ -146,7 +43,6 @@
 
       </button>
 
-      <!-- Logout -->
       <button
         *ngIf="isLoggedIn()"
         class="logout-btn"
@@ -157,7 +53,6 @@
 
       </button>
 
-      <!-- Menu Admin -->
       <p-tieredMenu
         #tieredMenu
         [model]="adminItems"
@@ -165,7 +60,6 @@
         styleClass="custom-tiered">
       </p-tieredMenu>
 
-      <!-- Hamburguer -->
       <button
         class="hamburger"
         (click)="menuVisible = !menuVisible"
@@ -183,9 +77,6 @@
 
 </header>
 
-<!-- ===================================================== -->
-<!-- Sidebar -->
-<!-- ===================================================== -->
 
 <p-sidebar
   [(visible)]="menuVisible"
@@ -230,9 +121,6 @@
 
 </p-sidebar>
 
-<!-- ===================================================== -->
-<!-- Modal Logout -->
-<!-- ===================================================== -->
 
 <p-dialog
   [(visible)]="showLogoutDialog"
