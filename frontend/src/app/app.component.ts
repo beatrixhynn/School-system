@@ -21,7 +21,7 @@ export class AppComponent {
 
   mostrarLayout = true;
 
-  constructor(private router: Router) {
+  constructor(public router: Router) {
     this.router.events.subscribe(() => {
       this.mostrarLayout = this.router.url !== '/';
     });

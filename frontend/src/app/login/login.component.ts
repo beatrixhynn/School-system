@@ -30,7 +30,7 @@ export class LoginComponent {
   }
 
   cadastroAluno() {
-    this.router.navigate(['/cadastro']);
+    this.router.navigate(['/register']);
   }
 
 

@@ -21,7 +21,7 @@ import { ThreeColumnsComponent } from './three-columns/three-columns.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { AuthGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin.guard';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import { RegisterComponent } from './register/register.component';
 
 
 export const routes: Routes = [
@@ -53,5 +53,5 @@ export const routes: Routes = [
                 component: StudentComponent,
                 canActivate: [adminGuard]
         },
-        { path: 'cadastro', component: CadastroComponent },
+        { path: 'register', component: RegisterComponent },
 ];

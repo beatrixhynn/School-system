@@ -120,6 +120,6 @@ confirmLogout() {
     summary: 'Até logo!',
     detail: 'Logout realizado com sucesso.'
   });
-  setTimeout(() => this.router.navigate(['']), 1000); // ← espera o toast aparecer
+  setTimeout(() => this.router.navigate(['login']), 1000); 
 }
 }
