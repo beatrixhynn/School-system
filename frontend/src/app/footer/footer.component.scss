@@ -3,7 +3,6 @@
   position: relative;
   background: #64b5f6;
  padding: 80px 15px 10px 15px; // espaço para a wave-onda
-  // border-top: 1px solid #ddd;
   color: white;
   font-size: 15px;
 
@@ -48,29 +47,7 @@
   margin-bottom: 20px;
 }
 
-h3 {
-  font-family: 'Nunito', sans-serif;
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #E2B615;
-  margin-bottom: 16px;
-  position: relative;
-  padding-bottom: 10px;
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0; bottom: 0;
-    width: 32px; height: 2px;
-    background: #E2B615;
-    border-radius: 2px;
-    opacity: 0.5;
-  }
-}
-
-// ── CONTATO ───────────────────────────────────
 .footer-contact {
   p {
     font-family: 'Nunito', sans-serif;
@@ -88,23 +65,19 @@ h3 {
   }
 }
 
-.footer-contact,
-.footer-social,
-.footer-form {
-  flex: 1 1 250px;
-  min-width: 220px;
-  margin-bottom: 20px;
-}
 
 h3 {
   font-family: 'Nunito', sans-serif;
-  font-size: 18px;
   font-weight: 800;
   color: white;
   margin-bottom: 16px;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 10px;
 }
 
-// ── CONTATO ───────────────────────────────────
 .footer-contact {
   p {
     font-family: 'Nunito', sans-serif;
@@ -252,3 +225,4 @@ h3 {
     font-size: 0.92rem;
   }
 }
+
