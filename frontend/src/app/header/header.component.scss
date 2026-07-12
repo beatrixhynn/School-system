@@ -7,7 +7,6 @@ $blue-dk: #1a6fa8;
 $ink: #1e293b;
 $white: #ffffff;
 
-/* ───────────────── NAVBAR ───────────────── */
 
 .navbar {
   position: fixed;
@@ -59,7 +58,6 @@ $white: #ffffff;
   gap: 24px;
 }
 
-/* ───────────────── LOGO ───────────────── */
 
 .logo-link {
 
@@ -95,7 +93,6 @@ $white: #ffffff;
   }
 }
 
-/* ───────────────── LINKS ───────────────── */
 
 .nav-links {
 
@@ -172,7 +169,6 @@ $white: #ffffff;
   }
 }
 
-/* ───────────────── ACTIONS ───────────────── */
 
 .nav-actions {
 
@@ -183,7 +179,6 @@ $white: #ffffff;
   gap: 12px;
 }
 
-/* ───────────────── ADMIN ───────────────── */
 
 .admin-btn {
 
@@ -231,7 +226,6 @@ $white: #ffffff;
   }
 }
 
-/* ───────────────── LOGOUT ───────────────── */
 
 .logout-btn {
 
@@ -285,7 +279,6 @@ $white: #ffffff;
   }
 }
 
-/* ───────────────── HAMBURGER ───────────────── */
 
 .hamburger {
 
@@ -338,7 +331,6 @@ $white: #ffffff;
   }
 }
 
-/* ───────────────── SIDEBAR ───────────────── */
 
 ::ng-deep .custom-sidebar {
 
@@ -478,7 +470,6 @@ $white: #ffffff;
   }
 }
 
-/* ───────────────── RESPONSIVO ───────────────── */
 
 @media(max-width:900px){
 
@@ -516,7 +507,6 @@ $white: #ffffff;
   }
 }
 
-// ── LOGOUT DIALOG ─────────────────────────────
 ::ng-deep .logout-dialog {
   .p-dialog         { border-radius: 20px !important; overflow: hidden; font-family: 'Nunito', sans-serif; }
   .p-dialog-header  { padding: 20px 24px 12px; border-bottom: 1px solid #f0f4f8; }
