@@ -136,16 +136,6 @@ h1 {
   }
 }
 
-.table-total {
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.85rem;
-  color: $muted;
-  font-weight: 700;
-  white-space: nowrap;
-
-  strong { color: $blue-dk; }
-}
-
 ::ng-deep .p-datatable {
 
   .p-datatable-thead > tr > th {
