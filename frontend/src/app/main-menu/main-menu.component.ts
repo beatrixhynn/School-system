@@ -8,20 +8,17 @@ import { MessagesModule } from 'primeng/messages';
 import { TableModule } from 'primeng/table';
 import { CarouselModule } from 'primeng/carousel';
 import { Router } from '@angular/router';
-import { AboutUsComponent } from '../about-us/about-us.component';
 import { GalleryComponent } from '../gallery/gallery.component';
 import { ContactUsComponent } from '../contact-us/contact-us.component';
+import { HeroComponent } from '../shared/hero/hero.component';
+import { AboutUsComponent } from '../about-us/about-us.component';
 
 @Component({
   selector: 'app-main-menu',
   standalone: true,
-  imports: [ButtonModule, CarouselModule, CommonModule,
-    HttpClientModule,
+  imports: [ButtonModule, CarouselModule, CommonModule, HeroComponent,
     ButtonModule,
-    TableModule,
-    DialogModule,
-    MessagesModule,
-    CalendarModule, AboutUsComponent, GalleryComponent, ContactUsComponent],
+  AboutUsComponent, GalleryComponent, ContactUsComponent],
   templateUrl: './main-menu.component.html',
   styleUrls: ['./main-menu.component.scss']
 })
