@@ -10,7 +10,6 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { GradeComponent } from './grade/grade.component';
 import { SchoolMealComponent } from './school-meal/school-meal.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { HeaderComponent } from './shared/header/header.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { GalleryPageComponent } from './gallery-page/gallery-page.component';
@@ -22,6 +21,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { AuthGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin.guard';
 import { RegisterComponent } from './register/register.component';
+import { HeaderComponent } from './header/header.component';
 
 
 export const routes: Routes = [

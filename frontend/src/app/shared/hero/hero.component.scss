@@ -1,162 +1,54 @@
-:host {
-  display:block;
-}
-
-
 .hero {
-
-  position:relative;
-
-  width:100%;
-
-  height:600px;
-
-  overflow:hidden;
-
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
-
 
 .hero-image {
-
-  width:100%;
-
-  height:600px;
-
-  object-fit:cover;
-
-  display:block;
-
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
 }
-
-
 
 .hero-button {
-
-  position:absolute;
-
-  top:70%;
-
-  left:50%;
-
-  transform:translate(-50%, -50%);
-
-  z-index:10;
-
-
-  background:#E2B615;
-
-  color:white;
-
-
-  padding:22px 36px;
-
-  border-radius:999px;
-
-  border:none;
-
-
-  font-family:'Nunito', sans-serif;
-
-  font-size:15px;
-
-  font-weight:900;
-
-  cursor:pointer;
-
-
-  box-shadow:
-  0 8px 26px rgba(0,0,0,.12);
-
-
-  transition:.2s;
-
-
-  &:hover {
-
-    transform:
-    translate(-50%, -55%);
-
-    background:#6fd06a;
-
-  }
-
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+    display: inline-block;
+  align-items: center;
+  background-color: #E2B615;
+  color: #ffffff; 
+  text-decoration: none;
+  padding: 22px 36px; 
+  font-size: 15px; /* aumentar tamanho do texto */
+  line-height: 1; 
+  border-radius: 9999px;
+  font-weight: 900;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 }
 
-
-
-.hero-shape {
-
-  position:absolute;
-
-  bottom:-1px;
-
-  left:0;
-
-  width:100%;
-
-  height:120px;
-
-  overflow:hidden;
-
-  z-index:5;
-
-
-  svg {
-
-    width:100%;
-
-    height:100%;
-
-    display:block;
-
-  }
-
+.hero-wave {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: 10;
 }
 
-
-
-.hero-shape-fill {
-
-  fill:white;
-
+.hero-wave svg {
+  display: block;
+  width: calc(105% + 1.3px);
+  height: 135px;
 }
 
-
-
-@media(max-width:900px){
-
-  .hero,
-  .hero-image {
-
-    height:500px;
-
-  }
-
-
-  .hero-shape {
-
-    height:90px;
-
-  }
-
-}
-
-
-
-@media(max-width:480px){
-
-  .hero,
-  .hero-image {
-
-    height:420px;
-
-  }
-
-
-  .hero-button {
-
-    padding:18px 28px;
-
-  }
-
+.hero-wave .shape-fill {
+  fill: #fff;
 }

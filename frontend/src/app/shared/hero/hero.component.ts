@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
+  @Output() knowMore = new EventEmitter<void>();
 
 
   constructor(
@@ -20,5 +21,6 @@ export class HeroComponent {
     this.router.navigateByUrl('/about-us');
 
   }
+  
 
 }

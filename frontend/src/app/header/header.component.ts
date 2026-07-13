@@ -7,8 +7,7 @@ import { DialogModule } from 'primeng/dialog';
 import { SidebarModule } from 'primeng/sidebar';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { ToastModule } from 'primeng/toast';
-
-import { LoginService } from '../../login/service/login.service';
+import { LoginService } from '../login/service/login.service';
 
 @Component({
   selector: 'app-header',
