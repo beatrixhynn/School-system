@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { WaveDividerComponent } from '../wave-divider/wave-divider.component';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
+  imports: [WaveDividerComponent],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
