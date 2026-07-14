@@ -1,1 +1,60 @@
-<p>student-table works!</p>
+<div class="table-card">
+
+    <div class="table-toolbar">
+        <div class="search-wrap">
+            <i class="pi pi-search"></i>
+            <input #searchInput type="text" placeholder="Pesquisar por nome, email ou responsável..."
+                (input)="dt.filterGlobal(searchInput.value, 'contains')" />
+        </div>
+    </div>
+
+    <p-table #dt [value]="students" [tableStyle]="{'min-width': '60rem'}" [paginator]="true" [rows]="10"
+        [rowsPerPageOptions]="[5, 10, 20]" [globalFilterFields]="['name','email','parentName']"
+        styleClass="p-datatable-sm">
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="id">
+                    ID
+                </th>
+                <th pSortableColumn="name">
+                    Nome
+                </th>
+                <th>Nascimento</th>
+                <th>Responsável</th>
+                <th>Celular</th>
+                <th>Email</th>
+                <th>Turma</th>
+                <th style="text-align:center">Ações</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-student>
+            <tr>
+                <td><span class="badge-id">#{{ student.id }}</span></td>
+                <td><strong>{{ student.name }}</strong></td>
+                <td>{{ student.birthDate | date:'dd/MM/yyyy' }}</td>
+                <td>{{ student.parentName }}</td>
+                <td>{{ student.parentCellphone }}</td>
+                <td>{{ student.email }}</td>
+                <td><span class="badge-turma">{{ student.grade?.section }}</span></td>
+                <td>
+                    <div class="action-buttons">
+                        <button class="action-btn view" (click)="view.emit(student)" title="Visualizar">
+                            <i class="pi pi-eye"></i>
+                        </button>
+                        <button *ngIf="isAdmin" class="action-btn edit" (click)="edit.emit(student)" title="Editar">
+                            <i class="pi pi-pencil"></i>
+                        </button>
+
+                        <button *ngIf="isAdmin" class="action-btn delete" (click)="delete.emit(student)"
+                            title="Excluir">
+                            <i class="pi pi-trash"></i>
+                        </button>
+
+
+                        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="8" class="empty-row">Nenhum aluno encontrado.</td>
+            </tr>
+        </ng-template>

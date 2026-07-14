@@ -2,10 +2,8 @@
 import { Routes } from '@angular/router';
 import { StudentFormComponent } from './student/student-form/student-form.component';
 import { TeacherFormComponent } from './teacher/teacher-form/teacher-form.component';
-import { GradeFormComponent } from './grade/grade-form/grade-form.component';
 import { SchoolMealFormComponent } from './school-meal/school-meal-form/school-meal-form.component';
 
-import { StudentComponent } from './student/student.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { GradeComponent } from './grade/grade.component';
 import { SchoolMealComponent } from './school-meal/school-meal.component';
@@ -22,6 +20,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin.guard';
 import { RegisterComponent } from './register/register.component';
 import { HeaderComponent } from './header/header.component';
+import { GradeFormComponent } from './grade/grade-form/grade-form.component';
+import { StudentComponent } from './student/student.component';
 
 
 export const routes: Routes = [

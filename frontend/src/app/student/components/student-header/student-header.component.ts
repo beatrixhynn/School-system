@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-student-header',
@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class StudentHeaderComponent {
 
+  @Input() totalStudents = 0;
+
+  @Input() isAdmin = false;
+
+  @Output() create = new EventEmitter<void>();
 }

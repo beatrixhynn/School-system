@@ -34,7 +34,7 @@ $bg:      #f8fafc;
 
   p, span:not([class*="pi"]), h1, h2, h3,
   label, button, td, th, small, strong {
-    @include nunito;
+   font-family: 'Nunito', sans-serif;
   }
 }
 
@@ -147,95 +147,4 @@ $bg:      #f8fafc;
   &.cancel         { background: #f1f5f9; color: $muted; border: 1px solid #e2e8f0; }
   &.confirm-delete { background: $red;   color: $white; }
   &.edit           { background: $blue;  color: $white; }
-}
-.dialog-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.dialog-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  flex-shrink: 0;
-
-  &.info {
-    background: #e8f4fd;
-  }
-}
-
-.dialog-eyebrow {
-  font-size: .68rem;
-  font-weight: 800;
-  color: #64748b;
-  text-transform: uppercase;
-}
-
-.dialog-title {
-  font-size: 1.05rem;
-  font-weight: 900;
-}
-
-.dialog-body {
-  padding: 20px 24px;
-}
-
-.detail-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.detail-item {
-  background: #fafbfc;
-  border: 1px solid #f0f4f8;
-  border-radius: 10px;
-  padding: 10px 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-
-  &.full {
-    grid-column: 1 / -1;
-  }
-}
-
-.detail-label {
-  font-size: .68rem;
-  font-weight: 800;
-  color: #64748b;
-  text-transform: uppercase;
-}
-
-.detail-value {
-  font-size: .9rem;
-  font-weight: 700;
-}
-
-.dialog-footer {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  padding: 16px 20px;
-}
-
-.dlg-btn {
-  padding: 9px 20px;
-  border-radius: 9px;
-  border: none;
-  cursor: pointer;
-}
-
-.dlg-btn.cancel {
-  background: #f1f5f9;
-}
-
-.dlg-btn.edit {
-  background: #64b5f6;
-  color: white;
 }

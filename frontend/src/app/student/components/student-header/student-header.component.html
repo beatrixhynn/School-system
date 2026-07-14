@@ -1,1 +1,20 @@
-<p>student-header works!</p>
+<div class="page-header">
+
+  <div>
+    <h1>Alunos</h1>
+    <span class="page-sub">
+      {{ totalStudents }} alunos cadastrados
+    </span>
+  </div>
+
+  <button
+    *ngIf="isAdmin"
+    class="btn-add"
+    (click)="create.emit()">
+
+    <i class="pi pi-plus"></i>
+    Adicionar Aluno
+
+  </button>
+
+</div>

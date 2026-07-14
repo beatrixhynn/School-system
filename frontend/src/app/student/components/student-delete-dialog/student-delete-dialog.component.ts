@@ -4,22 +4,22 @@ import { DialogModule } from 'primeng/dialog';
 import { StudentModel } from '../../interfaces/student-model.interface';
 
 @Component({
-  selector: 'app-student-details-dialog',
+  selector: 'app-student-delete-dialog',
   standalone: true,
   imports: [
     CommonModule,
     DialogModule
   ],
-  templateUrl: './student-details-dialog.component.html',
-  styleUrl: './student-details-dialog.component.scss'
+  templateUrl: './student-delete-dialog.component.html',
+  styleUrl: './student-delete-dialog.component.scss'
 })
-export class StudentDetailsDialogComponent {
+export class StudentDeleteDialogComponent {
 
   @Input() visible = false;
   @Input() student?: StudentModel;
 
   @Output() visibleChange = new EventEmitter<boolean>();
-  @Output() edit = new EventEmitter<StudentModel>();
+  @Output() confirmDelete = new EventEmitter<StudentModel>();
 
 
   closeDialog() {
@@ -28,9 +28,17 @@ export class StudentDetailsDialogComponent {
   }
 
 
-  editStudent() {
-    this.edit.emit(this.student);
-    this.closeDialog();
+  deleteStudent() {
+    if (this.student) {
+      this.confirmDelete.emit(this.student);
+      this.closeDialog();
+    }
+  }
+  confirmDeleteStudent(): void {
+    if (this.student) {
+      this.confirmDelete.emit(this.student);
+      this.closeDialog();
+    }
   }
 
 }
