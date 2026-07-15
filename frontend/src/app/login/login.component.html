@@ -1,0 +1,43 @@
+
+<div class="login-wrapper">
+
+  <div class="login-header">
+    <span class="eyebrow">COLÉGIO LUMIER</span>
+
+    <h1>
+      Bem-vindo de <strong>volta!</strong>
+    </h1>
+
+    <p>
+      Como você deseja continuar?
+    </p>
+  </div>
+
+  <div class="login-cards">
+
+    <div
+      *ngFor="let card of loginCards"
+      class="login-card"
+      [ngClass]="card.color"
+      (click)="card.action()">
+
+      <div class="card-shape"></div>
+
+      <div class="card-icon">
+        <i [class]="card.icon"></i>
+      </div>
+
+      <h3>{{ card.title }}</h3>
+
+      <p>{{ card.subtitle }}</p>
+
+      <span class="card-cta">
+        {{ card.button }}
+        <i class="pi pi-arrow-right"></i>
+      </span>
+
+    </div>
+
+  </div>
+
+</div>

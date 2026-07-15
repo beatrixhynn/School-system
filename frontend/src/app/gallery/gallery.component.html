@@ -1,0 +1,60 @@
+
+
+<div class="galeria-wrapper">
+
+  <div class="section-header">
+
+    <span class="eyebrow">
+      MOMENTOS ESPECIAIS
+    </span>
+
+    <h1>
+      Nossa <strong>Galeria</strong>
+    </h1>
+
+    <p class="subtitle">
+      Registros cheios de alegria, aprendizado e carinho
+    </p>
+
+  </div>
+
+
+  <section class="galeria-section">
+
+    <div class="gallery">
+
+      <div
+        class="gallery-item"
+        *ngFor="let image of images; let i = index"
+        [class.center]="i === 1">
+
+        <img
+          [src]="image.src"
+          [alt]="image.alt"
+          loading="lazy">
+
+      </div>
+
+    </div>
+
+
+    <div class="btn-wrap">
+
+      <button
+        class="btn-vermais"
+        (click)="toKnowMore()">
+
+        Ver Mais Fotos
+
+        <span class="btn-arrow">
+          →
+        </span>
+
+      </button>
+
+    </div>
+
+
+  </section>
+
+</div>

@@ -1,0 +1,48 @@
+<p-dialog [(visible)]="visible" [style]="{width:'480px'}" [modal]="true" [draggable]="false"
+    styleClass="custom-dialog">
+    <ng-template pTemplate="header">
+        <div class="dialog-header">
+            <div class="dialog-icon info">👤</div>
+            <div>
+                <p class="dialog-eyebrow">Detalhes</p>
+                <span class="dialog-title">{{ student?.name }}</span>
+            </div>
+        </div>
+    </ng-template>
+    <div class="dialog-body detail-grid">
+        <div class="detail-item">
+            <span class="detail-label">Nome</span>
+            <span class="detail-value">{{ student?.name }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Nascimento</span>
+            <span class="detail-value">{{ student?.birthDate | date:'dd/MM/yyyy' }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Responsável</span>
+            <span class="detail-value">{{ student?.parentName }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Celular</span>
+            <span class="detail-value">{{ student?.parentCellphone }}</span>
+        </div>
+        <div class="detail-item full">
+            <span class="detail-label">Email</span>
+            <span class="detail-value">{{ student?.email }}</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Turma</span>
+            <span class="detail-value">{{ student?.grade?.section }}</span>
+        </div>
+    </div>
+    <ng-template pTemplate="footer">
+        <div class="dialog-footer">
+            <button class="dlg-btn cancel" (click)="closeDialog()">Fechar</button>
+            <button class="dlg-btn edit" (click)="editStudent()">
+
+                <i class="pi pi-pencil"></i> Editar
+
+            </button>
+        </div>
+    </ng-template>
+</p-dialog>

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+$blue:    #64b5f6;
+$blue-dk: #1a6fa8;
+$blue-lt: #e8f4fd;
+$red:     #E7374A;
+$yellow:  #E2B615;
+$ink:     #1e293b;
+$muted:   #64748b;
+$white:   #ffffff;
+$bg:      #f5faff;
+
+
+.login-footer {
+  margin-top: 20px;
+  text-align: center;
+
+  .back-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $muted;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    &:hover {
+      color: $blue-dk;
+    }
+  }
+}

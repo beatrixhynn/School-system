@@ -1,0 +1,65 @@
+
+<div class="gallery-wrapper">
+
+
+  <div class="bg-deco deco-star">⭐</div>
+  <div class="bg-deco deco-pencil">✏️</div>
+  <div class="bg-deco deco-paint">🎨</div>
+  <div class="bg-deco deco-book">📚</div>
+
+
+
+  <div class="gallery-title">
+
+    <h1>
+      Galeria <span>da Escola</span>
+    </h1>
+
+    <p class="subtitle">
+      Momentos especiais que guardamos com carinho
+    </p>
+
+    <div class="title-underline"></div>
+
+  </div>
+
+
+
+
+  <section class="gallery-section">
+
+    <div class="gallery">
+
+
+      <div 
+        class="gallery-item"
+        *ngFor="let photo of photos"
+        [ngClass]="photo.size"
+      >
+
+
+        <img 
+          [src]="photo.image"
+          [alt]="photo.title"
+        >
+
+
+
+        <div class="overlay">
+
+          <span>
+            {{ photo.title }}
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+</div>

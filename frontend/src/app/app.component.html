@@ -1,0 +1,17 @@
+<!-- 
+<app-header *ngIf="mostrarLayout"></app-header>
+
+<router-outlet></router-outlet>
+
+<app-footer *ngIf="mostrarLayout"></app-footer> -->
+
+
+<app-header
+  *ngIf="!['/login-form', '/login', '/', '/register'].includes(router.url)">
+</app-header>
+
+<router-outlet></router-outlet>
+
+<app-footer
+  *ngIf="!['/login-form', '/login', '/', '/register'].includes(router.url)">
+</app-footer>
