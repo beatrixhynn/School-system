@@ -1,0 +1,26 @@
+<div class="form-actions">
+
+    <button
+        type="button"
+        class="btn-cancel"
+        (click)="cancel.emit()">
+
+        Cancelar
+
+    </button>
+
+    <button
+        type="submit"
+        class="btn-submit"
+        [disabled]="disabled">
+
+        <i
+            class="pi"
+            [ngClass]="isEdit ? 'pi-check' : 'pi-user-plus'">
+        </i>
+
+        {{ isEdit ? 'Salvar Alterações' : 'Cadastrar Professor' }}
+
+    </button>
+
+</div>
