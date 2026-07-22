@@ -219,23 +219,28 @@ import {
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { TeacherFormHeaderComponent } from '../components/teacher-form-header/teacher-form-header.component';
+import { TeacherFormActionsComponent } from '../components/teacher-form-actions/teacher-form-actions.component';
+import { TeacherFormFieldsComponent } from '../components/teacher-form-fields/teacher-form-fields.component';
 
 @Component({
     selector: 'app-teacher-form',
     standalone: true,
     imports: [
         CommonModule,
-        HttpClientModule,
-        ButtonModule,
-        InputTextModule,
-        FormsModule,
-        ReactiveFormsModule,
-        DropdownModule,
-        CalendarModule,
-        InputNumberModule,
-        MessagesModule,
-        ToastModule,
-        TeacherFormHeaderComponent
+    HttpClientModule,
+    ButtonModule,
+    InputTextModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DropdownModule,
+    CalendarModule,
+    InputNumberModule,
+    MessagesModule,
+    ToastModule,
+    TeacherFormHeaderComponent,
+    TeacherFormFieldsComponent,
+    TeacherFormActionsComponent
+
     ],
     templateUrl: './teacher-form.component.html',
     styleUrl: './teacher-form.component.scss',

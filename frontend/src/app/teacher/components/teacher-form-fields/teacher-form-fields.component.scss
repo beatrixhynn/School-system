@@ -1,87 +1,74 @@
 
 
 .form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px 28px;
 
-  @media (max-width: 600px) { grid-template-columns: 1fr; }
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:20px 28px;
+
+
+@media(max-width:600px){
+
+grid-template-columns:1fr;
+
 }
+
+}
+
+
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
 
-  &.full { grid-column: 1 / -1; }
+display:flex;
 
-  label {
-    font-size: 0.82rem;
-    font-weight: 800;
-    color: $ink;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding-left: 2px;
-  }
+flex-direction:column;
 
-  input.p-inputtext {
-    width: 100%;
-    height: 46px;
-    border-radius: 12px;
-    border: 2px solid #e2eaf4;
-    padding: 0 14px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: $ink;
-    background: #fbfdff;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    outline: none;
+gap:7px;
 
-    &::placeholder { color: #b0bec5; font-weight: 600; }
 
-    &:focus {
-      border-color: $blue;
-      box-shadow: 0 0 0 3px rgba(100,181,246,0.18);
-      background: $white;
-    }
+&.full {
 
-    &.input-invalid {
-      border-color: $red;
-      box-shadow: 0 0 0 3px rgba(231,55,74,0.12);
-    }
-  }
+grid-column:1/-1;
+
 }
 
-::ng-deep {
-  .p-calendar {
-    width: 100% !important;
 
-    .p-inputtext {
-      border-radius: 12px;
-      border: 2px solid #e2eaf4;
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      height: 46px;
-      background: #fbfdff;
-    }
 
-    &.p-invalid .p-inputtext {
-      border-color: $red !important;
-      box-shadow: 0 0 0 3px rgba(231,55,74,0.12) !important;
-    }
+label {
 
-    .p-inputtext:focus {
-      border-color: $blue !important;
-      box-shadow: 0 0 0 3px rgba(100,181,246,0.18) !important;
-    }
-  }
+font-size:.82rem;
+
+font-weight:800;
+
+color:#1e293b;
+
+text-transform:uppercase;
+
+}
+
+
+
+input {
+
+height:46px;
+
+border-radius:12px;
+
+}
+
 }
 
 .error-msg {
-  font-size: 0.78rem;
+  font-size: .78rem;
   font-weight: 700;
-  color: $red;
+  color: #E7374A;
   padding-left: 2px;
+}
+
+
+.input-invalid {
+  border-color: #E7374A !important;
+  box-shadow: 0 0 0 3px rgba(231,55,74,.12);
 }
