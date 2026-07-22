@@ -1,0 +1,91 @@
+
+
+<div class="login-wrapper">
+
+  <div class="login-card">
+
+    <div class="login-header">
+      <span class="eyebrow">COLÉGIO LUMIER</span>
+      <h2>Entrar na <strong>sua conta</strong></h2>
+      <p>Bem-vindo de volta!</p>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <form (ngSubmit)="login()" #form="ngForm" novalidate>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <div class="input-wrap" [class.input-error]="emailRef.invalid && emailRef.touched">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="seu@email.com"
+            required
+            email
+            #emailRef="ngModel"/>
+        </div>
+        <small class="error-msg" *ngIf="emailRef.invalid && emailRef.touched">
+          ⚠️ Email inválido ou obrigatório
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <div class="input-wrap" [class.input-error]="senhaRef.invalid && senhaRef.touched">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <input
+            id="senha"
+            [type]="showPassword ? 'text' : 'password'"
+            name="senha"
+            [(ngModel)]="senha"
+            placeholder="••••••••"
+            required
+            minlength="6"
+            #senhaRef="ngModel"/>
+          <button type="button" class="toggle-pw" (click)="showPassword = !showPassword">
+            <i class="pi" [ngClass]="showPassword ? 'pi-eye-slash' : 'pi-eye'"></i>
+          </button>
+        </div>
+        <small class="error-msg" *ngIf="senhaRef.invalid && senhaRef.touched">
+          ⚠️ Senha obrigatória — mínimo 6 caracteres
+        </small>
+      </div>
+
+      <div class="error-banner" *ngIf="erro">
+        ⚠️ {{ erro }}
+      </div>
+
+      <button type="submit" class="btn-submit" [disabled]="form.invalid || loading">
+        <span *ngIf="!loading">
+          <i class="pi pi-sign-in"></i>
+          Entrar
+        </span>
+        <span *ngIf="loading">
+          <i class="pi pi-spin pi-spinner"></i>
+          Entrando...
+        </span>
+      </button>
+
+    </form>
+
+    <div class="login-footer">
+      <a (click)="voltar()" class="back-link">
+        <i class="pi pi-arrow-left"></i> Voltar
+      </a>
+    </div>
+
+  </div>
+
+</div>

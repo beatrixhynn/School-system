@@ -1,0 +1,339 @@
+<!-- 
+<p-toast></p-toast>
+
+<div class="page-wrapper">
+
+  <div class="page-header">
+    <div class="page-header-left">
+      <div>
+        <span class="page-eyebrow">COLÉGIO LUMIER</span>
+        <h1>Refeições Escolares</h1>
+      </div>
+    </div>
+    <button class="btn-add" (click)="goToCreatePage()">
+      <i class="pi pi-plus"></i>
+      Adicionar Refeição
+    </button>
+  </div>
+
+  <div *ngIf="messages.length > 0" class="messages-wrap">
+    <p-messages [(value)]="messages" [enableService]="false" [closable]="true">
+    </p-messages>
+  </div>
+
+  <div class="table-card">
+    <p-table
+      [value]="schoolMealsList"
+      [tableStyle]="{'min-width': '50rem'}"
+      styleClass="p-datatable-sm"
+      [paginator]="true"
+      [rows]="10"
+      [rowsPerPageOptions]="[5, 10, 20]">
+
+      <ng-template pTemplate="caption">
+        <div class="table-caption">
+          <span class="table-total">
+            Total: <strong>{{ schoolMealsList.length }}</strong> refeições
+          </span>
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Horário</th>
+          <th>Restrição</th>
+          <th style="text-align:center">Ações</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-schoolMeal>
+        <tr>
+          <td><span class="badge-id">#{{ schoolMeal.id }}</span></td>
+          <td><strong>{{ schoolMeal.name }}</strong></td>
+          <td class="td-desc">{{ schoolMeal.description }}</td>
+          <td><span class="badge-time">🕐 {{ schoolMeal.time }}</span></td>
+          <td><span class="badge-restriction" [ngClass]="getRestrictionClass(schoolMeal.restrictionType)">
+            {{ schoolMeal.restrictionType || 'Nenhuma' }}
+          </span></td>
+          <td>
+            <div class="action-buttons">
+              <button class="action-btn view"   (click)="openModalToLook(schoolMeal)"   title="Visualizar">
+                <i class="pi pi-eye"></i>
+              </button>
+              <button class="action-btn edit"   (click)="openPageToEdit(schoolMeal)"    title="Editar">
+                <i class="pi pi-pencil"></i>
+              </button>
+              <button class="action-btn delete" (click)="openModalToDelete(schoolMeal)" title="Excluir">
+                <i class="pi pi-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="6" class="empty-row">
+            Nenhuma refeição cadastrada ainda.
+          </td>
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </div>
+
+</div>
+
+<p-dialog
+  [(visible)]="visibleModalDelete"
+  [style]="{width: '460px'}"
+  [modal]="true"
+  [draggable]="false"
+  styleClass="custom-dialog">
+
+  <ng-template pTemplate="header">
+    <div class="dialog-header">
+      <div class="dialog-icon danger">🗑️</div>
+      <div>
+        <p class="dialog-eyebrow">Atenção</p>
+        <span class="dialog-title">Excluir Refeição</span>
+      </div>
+    </div>
+  </ng-template>
+
+  <div class="dialog-body">
+    <p>Você está prestes a excluir <strong>{{ modelToDelete?.name }}</strong>.</p>
+    <p class="dialog-warn">⚠️ Essa ação não pode ser desfeita.</p>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <div class="dialog-footer">
+      <button class="dlg-btn cancel" (click)="visibleModalDelete = false">
+        Cancelar
+      </button>
+      <button class="dlg-btn confirm-delete" (click)="doDelete()">
+        <i class="pi pi-trash"></i> Sim, excluir
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+<p-dialog
+  [(visible)]="visibleModalToSeeModel"
+  [style]="{width: '500px'}"
+  [modal]="true"
+  [draggable]="false"
+  styleClass="custom-dialog">
+
+  <ng-template pTemplate="header">
+    <div class="dialog-header">
+      <div>
+        <p class="dialog-eyebrow">Detalhes</p>
+        <span class="dialog-title">{{ modelToLook?.name }}</span>
+      </div>
+    </div>
+  </ng-template>
+
+  <div class="dialog-body detail-grid">
+    <div class="detail-item full">
+      <span class="detail-label">Nome</span>
+      <span class="detail-value">{{ modelToLook?.name }}</span>
+    </div>
+    <div class="detail-item full">
+      <span class="detail-label">Descrição</span>
+      <span class="detail-value">{{ modelToLook?.description }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Horário</span>
+      <span class="detail-value">🕐 {{ modelToLook?.time }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Tipo de Restrição</span>
+      <span class="detail-value">
+        <span class="badge-restriction" [ngClass]="getRestrictionClass(modelToLook?.restrictionType)">
+          {{ modelToLook?.restrictionType || 'Nenhuma' }}
+        </span>
+      </span>
+    </div>
+  </div>
+
+  <ng-template pTemplate="footer">
+    <div class="dialog-footer">
+      <button class="dlg-btn cancel" (click)="visibleModalToSeeModel = false">
+        Fechar
+      </button>
+      <button class="dlg-btn edit"
+        (click)="openPageToEdit(modelToLook!); visibleModalToSeeModel = false">
+        <i class="pi pi-pencil"></i> Editar
+      </button>
+    </div>
+  </ng-template>
+</p-dialog> -->
+
+<p-toast></p-toast>
+
+<div class="page-wrapper">
+
+  <div class="page-header">
+    <div class="page-header-left">
+      <div>
+        <span class="page-eyebrow">COLÉGIO LUMIER</span>
+        <h1>Refeições Escolares</h1>
+        <span class="page-sub">{{ schoolMealsList.length }} refeições cadastradas</span>
+      </div>
+    </div>
+    <button class="btn-add" (click)="goToCreatePage()">
+      <i class="pi pi-plus"></i>
+      Adicionar Refeição
+    </button>
+  </div>
+
+  <div *ngIf="messages.length > 0" class="messages-wrap">
+    <p-messages [(value)]="messages" [enableService]="false" [closable]="true">
+    </p-messages>
+  </div>
+
+  <div class="table-card">
+
+    <div class="table-toolbar">
+      <div class="search-wrap">
+        <i class="pi pi-search"></i>
+        <input
+          #searchInput
+          type="text"
+          placeholder="Pesquisar por nome ou restrição..."
+          (input)="dt.filterGlobal(searchInput.value, 'contains')"/>
+      </div>
+    </div>
+
+    <p-table
+      #dt
+      [value]="schoolMealsList"
+      [tableStyle]="{'min-width': '50rem'}"
+      styleClass="p-datatable-sm"
+      [paginator]="true"
+      [rows]="10"
+      [rowsPerPageOptions]="[5, 10, 20]"
+      [globalFilterFields]="['name','description','restrictionType']">
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+          <th pSortableColumn="name">Nome <p-sortIcon field="name"></p-sortIcon></th>
+          <th>Descrição</th>
+          <th>Horário</th>
+          <th>Restrição</th>
+          <th style="text-align:center">Ações</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-schoolMeal>
+        <tr>
+          <td><span class="badge-id">#{{ schoolMeal.id }}</span></td>
+          <td><strong>{{ schoolMeal.name }}</strong></td>
+          <td class="td-desc">{{ schoolMeal.description }}</td>
+          <td><span class="badge-time">🕐 {{ schoolMeal.time }}</span></td>
+          <td>
+            <span class="badge-restriction" [ngClass]="getRestrictionClass(schoolMeal.restrictionType)">
+              {{ schoolMeal.restrictionType || 'Nenhuma' }}
+            </span>
+          </td>
+          <td>
+            <div class="action-buttons">
+              <button class="action-btn view"   (click)="openModalToLook(schoolMeal)"   title="Visualizar">
+                <i class="pi pi-eye"></i>
+              </button>
+              <button class="action-btn edit"   (click)="openPageToEdit(schoolMeal)"    title="Editar">
+                <i class="pi pi-pencil"></i>
+              </button>
+              <button class="action-btn delete" (click)="openModalToDelete(schoolMeal)" title="Excluir">
+                <i class="pi pi-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="6" class="empty-row">Nenhuma refeição cadastrada ainda.</td>
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </div>
+
+</div>
+
+<!-- MODAL EXCLUIR -->
+<p-dialog [(visible)]="visibleModalDelete" [style]="{width:'460px'}"
+  [modal]="true" [draggable]="false" styleClass="custom-dialog">
+  <ng-template pTemplate="header">
+    <div class="dialog-header">
+      <div class="dialog-icon danger">🗑️</div>
+      <div>
+        <p class="dialog-eyebrow">Atenção</p>
+        <span class="dialog-title">Excluir Refeição</span>
+      </div>
+    </div>
+  </ng-template>
+  <div class="dialog-body">
+    <p>Você está prestes a excluir <strong>{{ modelToDelete?.name }}</strong>.</p>
+    <p class="dialog-warn">⚠️ Essa ação não pode ser desfeita.</p>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="dialog-footer">
+      <button class="dlg-btn cancel" (click)="visibleModalDelete = false">Cancelar</button>
+      <button class="dlg-btn confirm-delete" (click)="doDelete()">
+        <i class="pi pi-trash"></i> Sim, excluir
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+<!-- MODAL VISUALIZAR -->
+<p-dialog [(visible)]="visibleModalToSeeModel" [style]="{width:'500px'}"
+  [modal]="true" [draggable]="false" styleClass="custom-dialog">
+  <ng-template pTemplate="header">
+    <div class="dialog-header">
+      <div class="dialog-icon info">🍽️</div>
+      <div>
+        <p class="dialog-eyebrow">Detalhes</p>
+        <span class="dialog-title">{{ modelToLook?.name }}</span>
+      </div>
+    </div>
+  </ng-template>
+  <div class="dialog-body detail-grid">
+    <div class="detail-item full">
+      <span class="detail-label">Nome</span>
+      <span class="detail-value">{{ modelToLook?.name }}</span>
+    </div>
+    <div class="detail-item full">
+      <span class="detail-label">Descrição</span>
+      <span class="detail-value">{{ modelToLook?.description }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Horário</span>
+      <span class="detail-value">🕐 {{ modelToLook?.time }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Tipo de Restrição</span>
+      <span class="detail-value">
+        <span class="badge-restriction" [ngClass]="getRestrictionClass(modelToLook?.restrictionType)">
+          {{ modelToLook?.restrictionType || 'Nenhuma' }}
+        </span>
+      </span>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="dialog-footer">
+      <button class="dlg-btn cancel" (click)="visibleModalToSeeModel = false">Fechar</button>
+      <button class="dlg-btn edit" (click)="openPageToEdit(modelToLook!); visibleModalToSeeModel = false">
+        <i class="pi pi-pencil"></i> Editar
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>

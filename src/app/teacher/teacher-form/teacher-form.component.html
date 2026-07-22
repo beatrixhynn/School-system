@@ -1,0 +1,89 @@
+
+<p-toast></p-toast>
+
+<div class="form-page">
+  <div class="form-card">
+
+    <div class="form-header">
+      <div>
+        <span class="form-eyebrow">COLÉGIO LUMIER</span>
+        <h2>{{ idteacher ? 'Editar Professor' : 'Cadastro de Professor' }}</h2>
+      </div>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <form [formGroup]="form" (ngSubmit)="doSubmitForm()" novalidate>
+      <div class="form-grid">
+
+        <div class="form-group full">
+          <label>Nome Completo</label>
+          <input pInputText formControlName="name" placeholder="Ex: Ana Paula Silva"
+            [class.input-invalid]="form.get('name')?.invalid && form.get('name')?.touched"/>
+          <small class="error-msg" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+             Nome obrigatório — mínimo 3 letras
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label>Data de Nascimento</label>
+          <p-calendar formControlName="birthDate" dateFormat="dd/mm/yy" placeholder="dd/mm/aaaa"
+            [style]="{'width':'100%'}"
+            [ngClass]="{'p-invalid': form.get('birthDate')?.invalid && form.get('birthDate')?.touched}">
+          </p-calendar>
+          <small class="error-msg" *ngIf="form.get('birthDate')?.invalid && form.get('birthDate')?.touched">
+             Data de nascimento obrigatória
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label>Formação</label>
+          <input pInputText formControlName="education" placeholder="Ex: Pedagogia, Letras..."
+            [class.input-invalid]="form.get('education')?.invalid && form.get('education')?.touched"/>
+          <small class="error-msg" *ngIf="form.get('education')?.invalid && form.get('education')?.touched">
+             Formação é obrigatória
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label>Celular (somente números)</label>
+          <input pInputText formControlName="cellphone" maxlength="11" placeholder="Ex: 11987654321"
+            [class.input-invalid]="form.get('cellphone')?.invalid && form.get('cellphone')?.touched"/>
+          <small class="error-msg" *ngIf="form.get('cellphone')?.invalid && form.get('cellphone')?.touched">
+             Celular deve ter 11 dígitos (somente números)
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input pInputText type="email" formControlName="email" placeholder="Ex: ana@escola.com"
+            [class.input-invalid]="form.get('email')?.invalid && form.get('email')?.touched"/>
+          <small class="error-msg" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+            Email inválido ou obrigatório
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label>Salário (R$)</label>
+          <input pInputText type="number" formControlName="salary" placeholder="Ex: 3500.00"
+            [class.input-invalid]="form.get('salary')?.invalid && form.get('salary')?.touched"/>
+          <small class="error-msg" *ngIf="form.get('salary')?.invalid && form.get('salary')?.touched">
+             Salário obrigatório e maior ou igual a 0
+          </small>
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" (click)="router.navigateByUrl('teachers')">
+          Cancelar
+        </button>
+        <button type="submit" class="btn-submit" [disabled]="form.invalid">
+          <i class="pi" [ngClass]="idteacher ? 'pi-check' : 'pi-user-plus'"></i>
+          {{ idteacher ? 'Salvar Alterações' : 'Cadastrar Professor' }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

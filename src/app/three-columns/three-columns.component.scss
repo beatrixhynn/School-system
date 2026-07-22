@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+.abordagem-section {
+  padding: 100px 40px;
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: 600px) { padding: 60px 20px; }
+}
+
+// ── HEADER ────────────────────────────────────
+.abordagem-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 72px;
+
+  .eyebrow {
+    display: inline-block;
+    color: #E7374A;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    position: relative;
+    padding: 0 14px;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 28px;
+      height: 2px;
+      background: #E7374A;
+      opacity: 0.35;
+    }
+    &::before { right: 100%; }
+    &::after  { left:  100%; }
+  }
+
+  h2 {
+    font-family: 'Fredoka One', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    color: #1e293b;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    font-weight: 400;
+
+    strong { color: #64b5f6; }
+  }
+
+  .abordagem-intro {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.9;
+    font-weight: 600;
+  }
+}
+
+// ── GRID ──────────────────────────────────────
+.abordagem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 1080px;
+  margin: 0 auto;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+  }
+}
+
+// ── CARD BASE ─────────────────────────────────
+.abordagem-card {
+  border-radius: 24px;
+  padding: 40px 32px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(.34,1.4,.64,1), box-shadow 0.3s ease;
+
+  &:hover { transform: translateY(-10px) rotate(0.4deg); }
+
+  // bolinha grande — canto superior direito
+  .card-shape {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    transition: transform 0.4s ease;
+    pointer-events: none;
+  }
+
+  &:hover .card-shape { transform: scale(1.3); }
+
+  // bolinha pequena — canto inferior esquerdo
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.08);
+    transition: transform 0.4s ease;
+    pointer-events: none;
+  }
+
+  &:hover::after { transform: scale(1.4); }
+}
+
+// ── ÍCONE ─────────────────────────────────────
+.card-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  background: rgba(255,255,255,0.25);
+  border: 2px solid rgba(255,255,255,0.4);
+  transition: transform 0.3s cubic-bezier(.34,1.4,.64,1), background 0.2s ease;
+  flex-shrink: 0;
+
+  svg {
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
+
+    // pontos do balão de fala
+    line {
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+  }
+
+  .abordagem-card:hover & {
+    transform: scale(1.12) rotate(-6deg);
+    background: rgba(255,255,255,0.38);
+  }
+}
+
+// ── TEXTO ─────────────────────────────────────
+.abordagem-card {
+
+  h3 {
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 0.93rem;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.82;
+    font-weight: 600;
+
+    strong {
+      color: #fff;
+      font-weight: 900;
+    }
+  }
+}
+
+// ── VARIANTES ─────────────────────────────────
+.card-blue {
+  background: #64b5f6 !important;
+  box-shadow: 0 8px 32px rgba(100,181,246,0.45), 6px 6px 0 rgba(26,111,168,0.3);
+  &:hover { box-shadow: 0 20px 48px rgba(100,181,246,0.55), 6px 6px 0 rgba(26,111,168,0.3); }
+}
+
+.card-yellow {
+  background: #E2B615 !important;
+  box-shadow: 0 8px 32px rgba(226,182,21,0.45), 6px 6px 0 rgba(180,140,10,0.3);
+  &:hover { box-shadow: 0 20px 48px rgba(226,182,21,0.55), 6px 6px 0 rgba(180,140,10,0.3); }
+}
+
+.card-red {
+  background: #E7374A !important;
+  box-shadow: 0 8px 32px rgba(231,55,74,0.4), 6px 6px 0 rgba(180,20,35,0.25);
+  &:hover { box-shadow: 0 20px 48px rgba(231,55,74,0.5), 6px 6px 0 rgba(180,20,35,0.25); }
+}

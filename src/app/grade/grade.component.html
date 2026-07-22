@@ -1,0 +1,163 @@
+
+<p-toast></p-toast>
+
+<div class="page-wrapper">
+
+  <!-- Cabeçalho -->
+  <div class="page-header">
+    <div class="page-header-left">
+      <div>
+        <span class="page-eyebrow">COLÉGIO LUMIER</span>
+        <h1>Turmas</h1>
+        <span class="page-sub">{{ gradesList.length }} turmas cadastradas</span>
+      </div>
+    </div>
+    <button class="btn-add" (click)="goToCreatePage()">
+      <i class="pi pi-plus"></i>
+      Criar Turma
+    </button>
+  </div>
+
+  <!-- Mensagens -->
+  <div *ngIf="messages.length > 0" class="messages-wrap">
+    <p-messages [(value)]="messages" [enableService]="false" [closable]="true">
+    </p-messages>
+  </div>
+
+  <!-- Tabela -->
+  <div class="table-card">
+
+    <div class="table-toolbar">
+      <div class="search-wrap">
+        <i class="pi pi-search"></i>
+        <input
+          #searchInput
+          type="text"
+          placeholder="Pesquisar por turma, ano ou professor..."
+          (input)="dt.filterGlobal(searchInput.value, 'contains')"/>
+      </div>
+    </div>
+
+    <p-table
+      #dt
+      [value]="gradesList"
+      [tableStyle]="{'min-width': '50rem'}"
+      styleClass="p-datatable-sm"
+      [paginator]="true"
+      [rows]="10"
+      [rowsPerPageOptions]="[5, 10, 20]"
+      [globalFilterFields]="['section','year','room','teacher.name']">
+
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
+          <th pSortableColumn="year">Ano <p-sortIcon field="year"></p-sortIcon></th>
+          <th pSortableColumn="section">Turma <p-sortIcon field="section"></p-sortIcon></th>
+          <th>Sala</th>
+          <th>Professor(a)</th>
+          <th style="text-align:center">Ações</th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-grade>
+        <tr>
+          <td><span class="badge-id">#{{ grade.id }}</span></td>
+          <td><span class="badge-year">{{ grade.year }}</span></td>
+          <td><strong>{{ grade.section }}</strong></td>
+          <td><span class="badge-room"> {{ grade.room }}</span></td>
+          <td>{{ grade.teacher?.name }}</td>
+          <td>
+            <div class="action-buttons">
+              <button class="action-btn view" (click)="openModalToLook(grade)" title="Visualizar">
+                <i class="pi pi-eye"></i>
+              </button>
+              <button class="action-btn edit" (click)="openPageToEdit(grade)" title="Editar">
+                <i class="pi pi-pencil"></i>
+              </button>
+              <button class="action-btn delete" (click)="openModalToDelete(grade)" title="Excluir">
+                <i class="pi pi-trash"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="6" class="empty-row">Nenhuma turma encontrada.</td>
+        </tr>
+      </ng-template>
+
+    </p-table>
+  </div>
+
+</div>
+
+<!-- MODAL EXCLUIR -->
+<p-dialog [(visible)]="visibleModalDelete" [style]="{width:'460px'}"
+  [modal]="true" [draggable]="false" styleClass="custom-dialog">
+  <ng-template pTemplate="header">
+    <div class="dialog-header">
+      <div class="dialog-icon danger">🗑️</div>
+      <div>
+        <p class="dialog-eyebrow">Atenção</p>
+        <span class="dialog-title">Excluir Turma</span>
+      </div>
+    </div>
+  </ng-template>
+  <div class="dialog-body">
+    <p>Você está prestes a excluir a turma <strong>{{ modelToDelete?.section }}</strong>.</p>
+    <p class="dialog-warn">⚠️ Essa ação não pode ser desfeita.</p>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="dialog-footer">
+      <button class="dlg-btn cancel" (click)="visibleModalDelete = false">Cancelar</button>
+      <button class="dlg-btn confirm-delete" (click)="doDelete()">
+        <i class="pi pi-trash"></i> Sim, excluir
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>
+
+<!-- MODAL VISUALIZAR -->
+<p-dialog [(visible)]="visibleModalToSeeModel" [style]="{width:'480px'}"
+  [modal]="true" [draggable]="false" styleClass="custom-dialog">
+  <ng-template pTemplate="header">
+    <div class="dialog-header">
+      <div class="dialog-icon info">🏫</div>
+      <div>
+        <p class="dialog-eyebrow">Detalhes</p>
+        <span class="dialog-title">Turma {{ modelToLook?.section }}</span>
+      </div>
+    </div>
+  </ng-template>
+  <div class="dialog-body detail-grid">
+    <div class="detail-item">
+      <span class="detail-label">Ano</span>
+      <span class="detail-value">
+        <span class="badge-year">{{ modelToLook?.year }}</span>
+      </span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Turma</span>
+      <span class="detail-value">{{ modelToLook?.section }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Sala</span>
+      <span class="detail-value"> {{ modelToLook?.room }}</span>
+    </div>
+    <div class="detail-item">
+      <span class="detail-label">Professor(a)</span>
+      <span class="detail-value">{{ modelToLook?.teacher?.name }}</span>
+    </div>
+  </div>
+  <ng-template pTemplate="footer">
+    <div class="dialog-footer">
+      <button class="dlg-btn cancel" (click)="visibleModalToSeeModel = false">Fechar</button>
+      <button class="dlg-btn edit"
+        (click)="openPageToEdit(modelToLook!); visibleModalToSeeModel = false">
+        <i class="pi pi-pencil"></i> Editar
+      </button>
+    </div>
+  </ng-template>
+</p-dialog>

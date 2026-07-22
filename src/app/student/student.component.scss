@@ -1,0 +1,348 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+$blue:    #64b5f6;
+$blue-dk: #1a6fa8;
+$blue-lt: #e8f4fd;
+$red:     #E7374A;
+$yellow:  #E2B615;
+$green:   #16a34a;
+$ink:     #1e293b;
+$muted:   #64748b;
+$white:   #ffffff;
+$bg:      #f8fafc;
+
+@mixin nunito {
+  font-family: 'Nunito', sans-serif;
+}
+
+:host { display: block; @include nunito; }
+
+.page-wrapper {
+  min-height: 100vh;
+  padding: 40px 40px 80px;
+  @include nunito;
+
+  @media (max-width: 600px) { padding: 24px 16px 60px; }
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  h1 {
+    @include nunito;
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: $ink;
+    margin: 0 0 2px;
+    line-height: 1;
+  }
+
+  .page-sub {
+    @include nunito;
+    font-size: 0.82rem;
+    color: $muted;
+    font-weight: 600;
+  }
+}
+
+.btn-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: $blue;
+  color: $white;
+  @include nunito;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(100,181,246,0.3);
+  transition: background 0.18s, transform 0.18s;
+
+  &:hover { background: $blue-dk; transform: translateY(-1px); }
+}
+
+.messages-wrap { margin-bottom: 18px; }
+
+.table-card {
+  background: $white;
+  border-radius: 16px;
+  border: 1px solid #e8edf2;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.table-toolbar {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f4f8;
+  background: $white;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: $bg;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 9px 14px;
+  max-width: 380px;
+  transition: border-color 0.2s ease;
+
+  &:focus-within {
+    border-color: $blue;
+    box-shadow: 0 0 0 3px rgba(100,181,246,0.12);
+  }
+
+  i { color: $muted; font-size: 0.85rem; flex-shrink: 0; }
+
+  input {
+    border: none;
+    background: transparent;
+    outline: none;
+    @include nunito;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: $ink;
+    width: 100%;
+
+    &::placeholder { color: #b0bec5; font-weight: 600; }
+  }
+}
+
+::ng-deep .p-datatable {
+
+  .p-datatable-thead > tr > th {
+    background: #fafbfc;
+    color: $muted;
+    @include nunito;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f0f4f8;
+    border-top: none;
+    padding: 12px 18px;
+  }
+
+  .p-datatable-tbody > tr {
+    transition: background 0.12s ease;
+    &:hover { background: #f8fafc !important; }
+
+    > td {
+      @include nunito;
+      font-size: 0.88rem;
+      color: $ink;
+      font-weight: 600;
+      padding: 12px 18px;
+      border-bottom: 1px solid #f5f7fa;
+    }
+  }
+
+  .p-paginator {
+    border-top: 1px solid #f0f4f8;
+    @include nunito;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 10px 18px;
+
+    .p-paginator-pages .p-paginator-page,
+    .p-paginator-current { @include nunito; }
+  }
+
+  .p-sortable-column-icon { font-size: 0.7rem; color: $muted; }
+}
+
+.badge-id {
+  @include nunito;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: $muted;
+}
+
+.badge-turma {
+  display: inline-block;
+  background: rgba(22,163,74,0.08);
+  color: $green;
+  @include nunito;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 2px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(22,163,74,0.18);
+}
+
+.empty-row {
+  text-align: center;
+  color: $muted;
+  font-style: italic;
+  padding: 48px !important;
+  font-size: 0.9rem;
+  @include nunito;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.action-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.78rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover { transform: translateY(-1px); }
+
+  &.view   { background: $blue-lt;             color: $blue-dk; }
+  &.edit   { background: rgba(226,182,21,0.1); color: darken($yellow,15%); }
+  &.delete { background: rgba(231,55,74,0.08); color: $red; }
+}
+
+::ng-deep .custom-dialog {
+
+  .p-dialog {
+    border-radius: 18px !important;
+    overflow: hidden;
+  }
+
+  .p-dialog-header {
+    padding: 22px 24px 14px;
+    border-bottom: 1px solid #f0f4f8;
+  }
+
+  .p-dialog-content { padding: 0 !important; }
+  .p-dialog-footer  { padding: 0 !important; border-top: 1px solid #f0f4f8; }
+
+  p, span:not([class*="pi"]), h1, h2, h3,
+  label, button, td, th, small, strong {
+    @include nunito;
+  }
+}
+
+.dialog-header { display: flex; align-items: center; gap: 12px; }
+
+.dialog-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; flex-shrink: 0;
+
+  &.danger { background: rgba(231,55,74,0.08); }
+  &.info   { background: $blue-lt; }
+}
+
+.dialog-eyebrow {
+  @include nunito;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: $muted;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 2px;
+}
+
+.dialog-title {
+  @include nunito;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: $ink;
+}
+
+.dialog-body {
+  padding: 20px 24px;
+
+  p {
+    @include nunito;
+    font-size: 0.92rem;
+    color: $ink;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .dialog-warn {
+    @include nunito;
+    font-size: 0.82rem;
+    color: $red;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  @media (max-width: 480px) { grid-template-columns: 1fr; }
+}
+
+.detail-item {
+  background: #fafbfc;
+  border: 1px solid #f0f4f8;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  &.full { grid-column: 1 / -1; }
+}
+
+.detail-label {
+  @include nunito;
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: $muted;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.detail-value {
+  @include nunito;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: $ink;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 20px;
+}
+
+.dlg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 20px;
+  border-radius: 9px;
+  @include nunito;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s, opacity 0.15s;
+
+  &:hover { transform: translateY(-1px); opacity: 0.9; }
+
+  &.cancel         { background: #f1f5f9; color: $muted; border: 1px solid #e2e8f0; }
+  &.confirm-delete { background: $red;   color: $white; }
+  &.edit           { background: $blue;  color: $white; }
+}

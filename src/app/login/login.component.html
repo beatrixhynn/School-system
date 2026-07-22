@@ -1,0 +1,45 @@
+
+
+<div class="login-wrapper">
+
+  <div class="login-header">
+    <span class="eyebrow">COLÉGIO LUMIER</span>
+    <h1>Bem-vindo de <strong>volta!</strong></h1>
+    <p>Como você deseja continuar?</p>
+  </div>
+
+  <div class="login-cards">
+
+    <div class="login-card card-blue" (click)="loginAluno()">
+      <div class="card-shape"></div>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </div>
+      <h3>Já sou aluno</h3>
+      <p>Entrar na área do aluno</p>
+      <span class="card-cta">Entrar <i class="pi pi-arrow-right"></i></span>
+    </div>
+
+    <div class="login-card card-yellow" (click)="cadastroAluno()">
+      <div class="card-shape"></div>
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <line x1="19" y1="8" x2="19" y2="14"/>
+          <line x1="22" y1="11" x2="16" y2="11"/>
+        </svg>
+      </div>
+      <h3>Não sou aluno</h3>
+      <p>Realizar cadastro</p>
+      <span class="card-cta">Cadastrar <i class="pi pi-arrow-right"></i></span>
+    </div>
+
+  </div>
+
+</div>
