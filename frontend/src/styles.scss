@@ -2,21 +2,20 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
 
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
-body {
-  font-family: 'Nunito', sans-serif;
+   font-family: 'Nunito', sans-serif;
 }
 
-h1, h2, h3, h4 {
-  // font-family: 'Poppins', sans-serif;
-    font-family: 'Nunito', sans-serif;
+ h1, h2, h3, h4{
+     font-family: 'Nunito', sans-serif;
 
-}
+ }
 
 // ...existing code...
 .p-menubar.custom-menubar {

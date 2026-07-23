@@ -1,16 +1,8 @@
 
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
-
-$blue:    #64b5f6;
-$blue-dk: #1a6fa8;
-$blue-lt: #e8f4fd;
-$red:     #E7374A;
-$ink:     #1e293b;
-$muted:   #64748b;
-$white:   #ffffff;
-
-:host { display: block; font-family: 'Nunito', sans-serif; }
+:host { display: block }
 
 .form-page {
   min-height: 100vh;

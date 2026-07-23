@@ -1,17 +1,6 @@
 
-
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap');
-
-// ── VARIÁVEIS ─────────────────────────────────
-$blue:   #2563eb;
-$main: #64b5f6;
-$blue-lt:#eff6ff;
-$yellow: #fbbf24;
-$green:  #16a34a;
-$pink:   #ec4899;
-$white:  #ffffff;
-$ink:    #1e293b;
-$muted:  #64748b;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 :host { display: block; }
 

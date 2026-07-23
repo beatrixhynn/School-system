@@ -1,11 +1,5 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
-
-$blue: #64b5f6;
-$blue-dk: #1a6fa8;
-$ink: #1e293b;
-$white: #ffffff;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 
 .navbar {

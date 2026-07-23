@@ -1,71 +1,16 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
-
-// .table-wrapper {
-//   margin-bottom: 32px !important;
-//   display: block;
-// }
-
-// .properties {
-//   margin: 10px 0;
-// }
-
-// /* Espaçamento horizontal genérico */
-// .mx-2 {
-//   margin: 0 10px;
-// }
-
-// /* Ajuste de botões */
-// p-button {
-//   margin: 0 10px;
-// }
-
-// /* Área dos botões de ação dentro da tabela */
-// .action-buttons {
-//   display: inline-flex;
-//   gap: 8px;
-//   align-items: center;
-// }
-
-// /* Margem do botão criar */
-// .btn-add {
-//   margin-bottom: 32px;
-// }
-
-// /* Garantir que estilização do p-table seja aplicada */
-// :host ::ng-deep .p-datatable.table-class {
-//   margin-top: 10px;
-//   border-radius: 6px;
-// }
-
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
-
-$blue:    #64b5f6;
-$blue-dk: #1a6fa8;
-$blue-lt: #e8f4fd;
-$red:     #E7374A;
-$yellow:  #E2B615;
-$green:   #16a34a;
-$purple:  #7c3aed;
-$ink:     #1e293b;
-$muted:   #64748b;
-$white:   #ffffff;
-$bg:      #f5faff;
-
-:host { display: block; font-family: 'Nunito', sans-serif; }
+:host { display: block }
 
 .page-wrapper {
   min-height: 100vh;
-  // background: $bg;
-  // background-image: repeating-linear-gradient(
-  //   transparent, transparent 31px,
-  //   #c7ddf7 31px, #c7ddf7 32px
-  // );
+
   padding: 48px 40px 80px;
 
   @media (max-width: 600px) { padding: 32px 16px 60px; }
 }
 
-// ── CABEÇALHO ─────────────────────────────────
 .page-header {
   display: flex;
   align-items: center;
@@ -138,7 +83,6 @@ h1 {
 
 .messages-wrap { margin-bottom: 20px; }
 
-// ── TABELA ────────────────────────────────────
 .table-card {
   background: $white;
   border-radius: 20px;
@@ -149,7 +93,6 @@ h1 {
 
 .table-caption {
   padding: 14px 20px;
-  // background: $blue-lt;
   border-bottom: 1px solid rgba(100,181,246,0.2);
   display: flex;
   justify-content: flex-end;
@@ -197,7 +140,6 @@ h1 {
   }
 }
 
-// ── BADGES ────────────────────────────────────
 .badge-id {
   display: inline-block;
   background: $blue-lt;

@@ -1,6 +1,5 @@
-$white:#fff;
-$blue-dk:#1a6fa8;
-$yellow:#fbbf24;
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
 
 :host{
 display:block;

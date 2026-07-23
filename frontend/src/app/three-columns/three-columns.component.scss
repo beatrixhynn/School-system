@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap');
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 .abordagem-section {
   padding: 100px 40px;
-  font-family: 'Nunito', sans-serif;
   position: relative;
   overflow: hidden;
 

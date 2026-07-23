@@ -1,10 +1,5 @@
-$blue: #64b5f6;
-$blue-dk: #1a6fa8;
-$red: #E7374A;
-$yellow: #E2B615;
-$ink: #1e293b;
-$muted: #64748b;
-$white: #ffffff;
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
 
 :host {
   display: block;

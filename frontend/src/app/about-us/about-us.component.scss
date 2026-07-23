@@ -1,13 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 :host {
   display: block;
-  font-family: 'Nunito', sans-serif;
 }
-
-// .about-section {
-//   padding: 100px 40px;
-// }
 
 .about-inner {
   max-width: 1100px;

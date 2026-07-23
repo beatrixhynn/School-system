@@ -1,21 +1,11 @@
-
-
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap');
-
-$blue: #64b5f6;
-$blue-dark: #1a6fa8;
-$yellow: #E2B615;
-$red: #E7374A;
-$ink: #1e293b;
-$muted: #64748b;
-$white: #fff;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 $radius: 24px;
 $transition: .3s cubic-bezier(.34,1.4,.64,1);
 
 :host {
   display: block;
-  font-family: 'Nunito', sans-serif;
 }
 
 

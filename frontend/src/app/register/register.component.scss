@@ -1,18 +1,8 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap');
 
-$blue:    #64b5f6;
-$blue-dk: #1a6fa8;
-$blue-lt: #e8f4fd;
-$red:     #E7374A;
-$yellow:  #E2B615;
-$green:   #16a34a;
-$ink:     #1e293b;
-$muted:   #64748b;
-$white:   #ffffff;
-$bg:      #f8fafc;
-
-:host { display: block; font-family: 'Nunito', sans-serif; }
+:host { display: block }
 
 .login-wrapper {
   min-height: 100vh;

@@ -1,23 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
-
-$main: #64b5f6;
-$dark: #1a6fa8;
-$light: #e8f4fd;
-$white: #ffffff;
-$ink: #1e293b;
-$muted: #64748b;
-$red: #E7374A;
-$yellow: #fbbf24;
-$green: #34d399;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
 
 :host {
   display: block;
-  font-family: 'Nunito', sans-serif;
 }
 
 .horario-wrapper {
   padding: 80px 40px 100px;
-  // background: #f5faff;
 }
 
 .section-header {
