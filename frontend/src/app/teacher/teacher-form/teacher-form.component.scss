@@ -1,56 +1,30 @@
-
 @use '../../../styles/variables' as *;
 @use '../../../styles/mixins' as *;
 
-
 :host {
-  display:block;
-  font-family:'Nunito', sans-serif;
+  display: block;
 }
-
-
 
 .form-page {
-
-  min-height:100vh;
-
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
-
-  padding:60px 24px 80px;
-
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 60px 24px 80px;
 }
-
-
 
 .form-card {
-
-  width:100%;
-
-  max-width:780px;
-
-  padding:48px 52px 44px;
-
-  background:$white;
-
-  border-radius:28px;
-
-
-  border:2px solid rgba(100,181,246,.2);
-
-
+  width: 100%;
+  max-width: 780px;
+  padding: 48px 52px 44px;
+  background: $white;
+  border: 2px solid rgba(100, 181, 246, .2);
+  border-radius: 28px;
   box-shadow:
-
-    0 0 0 6px rgba(100,181,246,.08),
-    0 16px 48px rgba(100,181,246,.14);
-
+    0 0 0 6px rgba(100, 181, 246, .08),
+    0 16px 48px rgba(100, 181, 246, .14);
 }
 
-
-
 form {
-
-  width:100%;
-
+  width: 100%;
 }
