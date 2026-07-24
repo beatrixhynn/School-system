@@ -1,7 +1,7 @@
 
         import { Injectable } from '@angular/core';
         import { HttpClient } from '@angular/common/http';
-        import { environment } from '../../../environment/environment';
+        import { environment } from '../../../../environment/environment';
         import { Observable } from 'rxjs';
         import { StudentModel } from '../interfaces/student-model.interface';
         

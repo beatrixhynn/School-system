@@ -2,8 +2,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { TeacherService } from './/services/teacher-service.service';
-import { TeacherModel } from './/interfaces/teacher-model.interface';
+import { TeacherService } from './services/teacher-service.service';
+import { TeacherModel } from './interfaces/teacher-model.interface';
 
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';

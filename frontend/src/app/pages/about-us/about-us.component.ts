@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ThreeColumnsComponent } from '../three-columns/three-columns.component';
+import { ThreeColumnsComponent } from '../layout/three-columns/three-columns.component';
 import { AboutBlockComponent } from './components/about-block/about-block.component';
 import { WaveBannerComponent } from './components/wave-banner/wave-banner.component';
 

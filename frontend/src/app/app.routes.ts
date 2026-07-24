@@ -1,27 +1,27 @@
 
 import { Routes } from '@angular/router';
-import { StudentFormComponent } from './student/student-form/student-form.component';
-import { TeacherFormComponent } from './teacher/teacher-form/teacher-form.component';
+import { StudentFormComponent } from './features/student/student-form/student-form.component';
+import { TeacherFormComponent } from './features/teacher/teacher-form/teacher-form.component';
 import { SchoolMealFormComponent } from './school-meal/school-meal-form/school-meal-form.component';
 
-import { TeacherComponent } from './teacher/teacher.component';
+import { TeacherComponent } from './features/teacher/teacher.component';
 import { GradeComponent } from './grade/grade.component';
 import { SchoolMealComponent } from './school-meal/school-meal.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
-import { GalleryComponent } from './gallery/gallery.component';
+import { MainMenuComponent } from './layout/footer/main-menu/main-menu.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { GalleryPageComponent } from './gallery-page/gallery-page.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { Component } from '@angular/core';
 import { LoginComponent } from './login/login.component';
-import { ThreeColumnsComponent } from './three-columns/three-columns.component';
+import { ThreeColumnsComponent } from './layout/three-columns/three-columns.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { AuthGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin.guard';
 import { RegisterComponent } from './register/register.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './shared/header/header.component';
 import { GradeFormComponent } from './grade/grade-form/grade-form.component';
-import { StudentComponent } from './student/student.component';
+import { StudentComponent } from './features/student/student.component';
 
 
 export const routes: Routes = [
