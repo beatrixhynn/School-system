@@ -1,322 +1,387 @@
-@use '../../styles/variables' as *;
+// @use '../../styles/variables' as *;
 
 
-.app-footer {
+// .app-footer {
 
   
 
-  position: relative;
+//   position: relative;
 
-  padding: 80px 15px 10px;
+//   padding: 80px 15px 10px;
 
-  background: $blue;
+//   background: $blue;
 
-  color: $white;
+//   color: $white;
 
 
 
-  ::ng-deep input.p-inputtext::placeholder {
-    color: $ink !important;
-    opacity: 1;
-  }
+//   ::ng-deep input.p-inputtext::placeholder {
+//     color: $ink !important;
+//     opacity: 1;
+//   }
 
 
 
 
-  .custom-shape-divider-top-1767829964 {
+//   .custom-shape-divider-top-1767829964 {
 
-    position: absolute;
+//     position: absolute;
 
-    top: 0;
-    left: 0;
+//     top: 0;
+//     left: 0;
 
-    width: 100%;
+//     width: 100%;
 
-    overflow: hidden;
+//     overflow: hidden;
 
-    line-height: 0;
+//     line-height: 0;
 
 
-    svg {
+//     svg {
 
-      display: block;
+//       display: block;
 
-      width: calc(100% + 1.3px);
+//       width: calc(100% + 1.3px);
 
-      height: 92px;
+//       height: 92px;
 
-    }
+//     }
 
 
-    .shape-fill {
+//     .shape-fill {
 
-      fill: $white;
+//       fill: $white;
 
-    }
+//     }
 
-  }
+//   }
 
 
-}
+// }
 
 
 
-.footer-main {
+// .footer-main {
 
-  position: relative;
+//   position: relative;
 
-  z-index: 2;
+//   z-index: 2;
 
-  display: flex;
+//   display: flex;
 
-  flex-wrap: wrap;
+//   flex-wrap: wrap;
 
-  justify-content: space-between;
+//   justify-content: space-between;
 
-  gap: 32px;
+//   gap: 32px;
 
-  max-width: 1200px;
+//   max-width: 1200px;
 
-  margin: 0 auto;
+//   margin: 0 auto;
 
-}
+// }
 
 
 
-.footer-contact,
-.footer-social,
-.footer-form {
+// .footer-contact,
+// .footer-social,
+// .footer-form {
 
-  flex: 1 1 250px;
+//   flex: 1 1 250px;
 
-  min-width: 220px;
+//   min-width: 220px;
 
-}
+// }
 
 
 
-h3 {
+// h3 {
 
-  margin-bottom: 16px;
+//   margin-bottom: 16px;
 
-  padding-bottom: 10px;
+//   padding-bottom: 10px;
 
-  color: $white;
+//   color: $white;
 
-  font-family: 'Nunito', sans-serif;
+//   font-family: 'Nunito', sans-serif;
 
-  font-size: 1rem;
+//   font-size: 1rem;
 
-  font-weight: 800;
+//   font-weight: 800;
 
-  letter-spacing: .12em;
+//   letter-spacing: .12em;
 
-  text-transform: uppercase;
+//   text-transform: uppercase;
 
-}
+// }
 
 
 
-.footer-contact {
+// .footer-contact {
 
-  p {
+//   p {
 
-    color: rgba(255,255,255,.75);
+//     color: rgba(255,255,255,.75);
 
-    font-size: .88rem;
+//     font-size: .88rem;
 
-    font-weight: 600;
+//     font-weight: 600;
 
-    line-height: 2.2;
+//     line-height: 2.2;
 
-  }
+//   }
 
 
-  i {
+//   i {
 
-    width: 16px;
+//     width: 16px;
 
-    margin-right: 8px;
+//     margin-right: 8px;
 
-    color: $yellow;
+//     color: $yellow;
 
-    text-align: center;
+//     text-align: center;
 
-  }
+//   }
 
-}
+// }
 
 
 
-.footer-social {
+// .footer-social {
 
 
-  .social-icons {
+//   .social-icons {
 
-    display: flex;
+//     display: flex;
 
-    flex-wrap: wrap;
+//     flex-wrap: wrap;
 
-    gap: 16px;
+//     gap: 16px;
 
 
-    a {
+//     a {
 
-      color: rgba(255,255,255,.7);
+//       color: rgba(255,255,255,.7);
 
-      font-size: 1.4rem;
+//       font-size: 1.4rem;
 
-      transition: .2s;
+//       transition: .2s;
 
 
-      &:hover {
+//       &:hover {
 
-        color: $white;
+//         color: $white;
 
-        transform: translateY(-3px);
+//         transform: translateY(-3px);
 
-      }
+//       }
 
-    }
+//     }
 
-  }
+//   }
 
-}
+// }
 
 
 
-.footer-form {
+// .footer-form {
 
 
-  form {
+//   form {
 
-    margin-top: 8px;
+//     margin-top: 8px;
 
 
-    .form-group {
+//     .form-group {
 
-      margin-bottom: 12px;
+//       margin-bottom: 12px;
 
-    }
+//     }
 
-  }
+//   }
 
-}
+// }
 
 
 
-::ng-deep .btn-salvar {
+// ::ng-deep .btn-salvar {
 
 
-  width: 100%;
+//   width: 100%;
 
 
-  .p-button {
+//   .p-button {
 
-    width: 100%;
+//     width: 100%;
 
-    padding: 14px 28px;
+//     padding: 14px 28px;
 
-    border: none;
+//     border: none;
 
-    border-radius: 999px;
+//     border-radius: 999px;
 
-    background: $yellow;
+//     background: $yellow;
 
-    color: $white;
+//     color: $white;
 
-    font-family: 'Nunito', sans-serif;
+//     font-family: 'Nunito', sans-serif;
 
-    font-size: .9rem;
+//     font-size: .9rem;
 
-    font-weight: 900;
+//     font-weight: 900;
 
-    letter-spacing: .06em;
+//     letter-spacing: .06em;
 
-    text-transform: uppercase;
+//     text-transform: uppercase;
 
 
-    &:hover:not(:disabled) {
+//     &:hover:not(:disabled) {
 
-      background: darken($yellow, 10%);
+//       background: darken($yellow, 10%);
 
-      transform: translateY(-2px);
+//       transform: translateY(-2px);
 
-    }
+//     }
 
 
-    &:disabled {
+//     &:disabled {
 
-      background: #b0bec5;
+//       background: #b0bec5;
 
-    }
+//     }
 
-  }
+//   }
 
-}
+// }
 
 
 
-.footer-bottom {
+// .footer-bottom {
 
-  margin-top: 24px;
+//   margin-top: 24px;
 
-  padding-top: 10px;
+//   padding-top: 10px;
 
-  text-align: center;
+//   text-align: center;
 
-  color: $white;
+//   color: $white;
 
-  font-size: .875rem;
+//   font-size: .875rem;
 
-}
+// }
 
 
 
-.btn-topo {
+// .btn-topo {
 
-  width: 48px;
+//   width: 48px;
 
-  height: 48px;
+//   height: 48px;
 
-  border-radius: 50%;
+//   border-radius: 50%;
 
-  border: 2.5px solid $yellow;
+//   border: 2.5px solid $yellow;
 
-  background: transparent;
+//   background: transparent;
 
-  color: $white;
+//   color: $white;
 
-  font-size: 1.2rem;
+//   font-size: 1.2rem;
 
-  cursor: pointer;
+//   cursor: pointer;
 
 
-  &:hover {
+//   &:hover {
 
-    background: $yellow;
+//     background: $yellow;
 
-    transform: translateY(-3px);
+//     transform: translateY(-3px);
 
-  }
+//   }
 
-}
+// }
 
 
+
+// .app-footer {
+
+
+//   ::ng-deep .p-inputtext::placeholder {
+
+//     color: rgba(255,255,255,.6);
+
+//     font-family: 'Nunito', sans-serif;
+
+//     font-size: .92rem;
+
+//     font-weight: 600;
+
+//   }
+
+// }
+
+
+
+@use '../../styles/variables' as *;
 
 .app-footer {
+  position: relative;
+  padding: 80px 15px 10px;
+  background: $blue;
+  color: $white;
 
+  .custom-shape-divider-top-1767829964 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
 
-  ::ng-deep .p-inputtext::placeholder {
+    svg {
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 92px;
+    }
 
-    color: rgba(255,255,255,.6);
-
-    font-family: 'Nunito', sans-serif;
-
-    font-size: .92rem;
-
-    font-weight: 600;
-
+    .shape-fill {
+      fill: $white;
+    }
   }
+}
 
+.footer-main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-bottom {
+  margin-top: 24px;
+  padding-top: 10px;
+  text-align: center;
+  color: $white;
+  font-size: .875rem;
+}
+
+.btn-topo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2.5px solid $yellow;
+  background: transparent;
+  color: $white;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  &:hover {
+    background: $yellow;
+    transform: translateY(-3px);
+  }
 }

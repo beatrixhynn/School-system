@@ -2,11 +2,6 @@ import {
   AngleRightIcon
 } from "./chunk-WMDSJCSL.js";
 import {
-  RouterLink,
-  RouterLinkActive,
-  RouterModule
-} from "./chunk-WIRNRO43.js";
-import {
   Tooltip,
   TooltipModule
 } from "./chunk-NP5IDUKI.js";
@@ -16,6 +11,11 @@ import {
   transition,
   trigger
 } from "./chunk-M4KXK2R4.js";
+import {
+  RouterLink,
+  RouterLinkActive,
+  RouterModule
+} from "./chunk-WIRNRO43.js";
 import "./chunk-T4TL4VMF.js";
 import "./chunk-NGJP63KZ.js";
 import {
