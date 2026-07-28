@@ -88,3 +88,5 @@ public class AuthController {
         return ResponseEntity.ok(Map.of("message", "Usuário criado com sucesso"));
     }
 }
+
+//teste
