@@ -33,7 +33,7 @@
             #emailRef="ngModel"/>
         </div>
         <small class="error-msg" *ngIf="emailRef.invalid && emailRef.touched">
-          ⚠️ Email inválido ou obrigatório
+           Email inválido ou obrigatório
         </small>
       </div>
 
@@ -59,12 +59,12 @@
           </button>
         </div>
         <small class="error-msg" *ngIf="senhaRef.invalid && senhaRef.touched">
-          ⚠️ Senha obrigatória — mínimo 6 caracteres
+           Senha obrigatória — mínimo 6 caracteres
         </small>
       </div>
 
       <div class="error-banner" *ngIf="erro">
-        ⚠️ {{ erro }}
+         {{ erro }}
       </div>
 
       <button type="submit" class="btn-submit" [disabled]="form.invalid || loading">
