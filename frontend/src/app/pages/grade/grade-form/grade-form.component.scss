@@ -1,5 +1,5 @@
-@use '../../../styles/variables' as *;
-@use '../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+@use '../../../../styles/variables' as *;
 
 
 :host {
@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: flex-start;
 
-  padding: 60px 24px 80px;
+  padding: 120px 24px 80px;
 
 }
 
@@ -25,6 +25,8 @@
 
   width: 100%;
   max-width: 700px;
+
+    padding-top: 80px;
 
   padding: 48px 52px 44px;
 
@@ -294,6 +296,7 @@
   font-size: .9rem;
 
   font-weight: 800;
+  font-family: 'Nunito', sans-serif;
 
   cursor: pointer;
 

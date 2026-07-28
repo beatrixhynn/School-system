@@ -1,6 +1,5 @@
-
-@use '../../styles/variables' as *;
-@use '../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 
 
 :host {
@@ -22,6 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 80px;
 
   flex-wrap: wrap;
   gap: 16px;
@@ -65,7 +65,7 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 8px;
-
+  font-family: 'Nunito', sans-serif;
   padding: 10px 22px;
 
   border: 0;
@@ -105,58 +105,60 @@ h1 {
 
   border: 1px solid #e8edf2;
   border-radius: 16px;
-
-  box-shadow: 0 2px 12px rgba(0, 0, 0, .05);;
+  font-family: 'Nunito', sans-serif;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .05);
+  ;
 
 }
 
 
 .table-toolbar {
   padding: 14px 20px;
-
   border-bottom: 1px solid #e8edf2;
 }
 
 .search-wrap {
 
+
   display: flex;
   align-items: center;
-
   gap: 10px;
-
-  width: 340px;
-
-  padding: 9px 14px;
-
-  background: $bg;
-
-  border: 1px solid #e8edf2;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 10px;
-
+  padding: 9px 14px;
+  max-width: 380px;
+  transition: border-color 0.2s ease;
 
   &:focus-within {
-    border-color: $blue;
+    border-color: #64b5f6;
+    box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.12);
   }
 
 
   i {
-    color: $muted;
+    color: #64748b;
+    font-size: .85rem;
+    flex-shrink: 0;
   }
 
 
   input {
 
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1e293b;
     width: 100%;
 
-    border: 0;
-    outline: 0;
-
-    background: transparent;
-
-    font-weight: 600;
+    &::placeholder {
+      color: #b0bec5;
+      font-weight: 600;
+    }
 
   }
-
 }
 
 
@@ -169,11 +171,14 @@ h1 {
 
     padding: 12px 18px;
 
-    background: $bg;
-
+    // background: $bg;
+    background: #f8fbff;
     border-bottom: 1px solid #e8edf2;
 
     color: $muted;
+    font-family: 'Nunito', sans-serif;
+    border-bottom: 2px solid rgba(100, 181, 246, 0.18);
+
 
     font-size: .75rem;
     font-weight: 800;
@@ -196,7 +201,6 @@ h1 {
       color: $ink;
 
       font-size: .88rem;
-
       border-bottom: 1px solid #e8edf2;
 
     }
@@ -226,7 +230,7 @@ h1 {
 
   background: rgba($orange, .08);
 
-  border: 1px solid rgba(249,115,22,.2);
+  border: 1px solid rgba(249, 115, 22, .2);
 
   color: $orange;
 
@@ -263,6 +267,7 @@ h1 {
   gap: 6px;
 
 }
+
 .action-btn {
 
   width: 30px;
@@ -314,6 +319,13 @@ h1 {
     border-bottom: 1px solid #e8edf2;
   }
 
+  .dialog-warn {
+    font-size: 0.85rem;
+    color: #E7374A;
+    font-weight: 700;
+    margin-top: 12px;
+  }
+
 
   .p-dialog-content {
     padding: 0;
@@ -361,8 +373,13 @@ h1 {
 
 .dialog-body {
   padding: 20px 24px;
-}
+      font-size: 0.95rem;
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-family: "Nunito", sans-serif;
 
+}
 
 .detail-grid {
 
@@ -413,12 +430,12 @@ h1 {
   cursor: pointer;
 
 
-&.cancel {
-  background: #f1f5f9;
-  color: $muted;
+  &.cancel {
+    background: #f1f5f9;
+    color: $muted;
 
-  border: 1px solid #e2e8f0;
-}
+    border: 1px solid #e2e8f0;
+  }
 
   &.confirm-delete {
     background: $red;

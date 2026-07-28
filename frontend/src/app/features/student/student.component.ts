@@ -11,7 +11,6 @@ import { ToastModule } from 'primeng/toast';
 
 import { StudentService } from './services/student-service.service';
 import { StudentModel } from './interfaces/student-model.interface';
-import { LoginService } from '../login/service/login.service';
 
 import { StudentHeaderComponent } from './components/student-header/student-header.component';
 import { StudentTableComponent } from './components/student-table/student-table.component';
@@ -19,6 +18,7 @@ import { StudentDetailsDialogComponent } from './components/student-details-dial
 import { StudentDeleteDialogComponent } from './components/student-delete-dialog/student-delete-dialog.component';
 import { MessagesModule } from 'primeng/messages';
 import { error } from 'console';
+import { LoginService } from '../../auth/login/service/login.service';
 
 @Component({
     selector: 'app-student',

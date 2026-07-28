@@ -1,4 +1,4 @@
-import { TeacherModel } from "../../teacher/interfaces/teacher-model.interface"
+import { TeacherModel } from "../../../features/teacher/interfaces/teacher-model.interface"
 
         
         export interface GradeModel {

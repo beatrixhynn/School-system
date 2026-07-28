@@ -1,13 +1,11 @@
-
-
-@use '../../styles/variables' as *;
-@use '../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 
 :host { display: block }
 
 .page-wrapper {
   min-height: 100vh;
-  padding: 40px 40px 80px;
+  padding: 120px 40px 80px;
 
   @media (max-width: 600px) { padding: 24px 16px 60px; }
 }

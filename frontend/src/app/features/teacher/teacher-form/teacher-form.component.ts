@@ -32,19 +32,19 @@ import { TeacherFormFieldsComponent } from '../components/teacher-form-fields/te
     standalone: true,
     imports: [
         CommonModule,
-    HttpClientModule,
-    ButtonModule,
-    InputTextModule,
-    FormsModule,
-    ReactiveFormsModule,
-    DropdownModule,
-    CalendarModule,
-    InputNumberModule,
-    MessagesModule,
-    ToastModule,
-    TeacherFormHeaderComponent,
-    TeacherFormFieldsComponent,
-    TeacherFormActionsComponent
+        HttpClientModule,
+        ButtonModule,
+        InputTextModule,
+        FormsModule,
+        ReactiveFormsModule,
+        DropdownModule,
+        CalendarModule,
+        InputNumberModule,
+        MessagesModule,
+        ToastModule,
+        TeacherFormHeaderComponent,
+        TeacherFormFieldsComponent,
+        TeacherFormActionsComponent
 
     ],
     templateUrl: './teacher-form.component.html',
@@ -84,7 +84,11 @@ export class TeacherFormComponent implements OnInit {
         this.form = this.formBuilder.group({
             name: ['', [Validators.required, Validators.minLength(3)]],
             birthDate: ['', Validators.required],
-            education: ['', Validators.required],
+            education: ['', Validators.required,
+                 Validators.minLength(3),
+                 Validators.pattern(/^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/),
+                Validators.maxLength(100)
+            ],
             cellphone: [
                 '',
                 [

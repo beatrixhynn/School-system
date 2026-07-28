@@ -21,19 +21,10 @@ import {
 import {
   Ripple,
   RippleModule
-} from "./chunk-NOQOLNKY.js";
+} from "./chunk-WATW3OZW.js";
 import {
   DomHandler
 } from "./chunk-5JO7MPJR.js";
-import {
-  CommonModule,
-  DOCUMENT,
-  NgClass,
-  NgForOf,
-  NgIf,
-  NgStyle,
-  NgTemplateOutlet
-} from "./chunk-KWYPC52F.js";
 import {
   MessageService,
   ObjectUtils,
@@ -43,6 +34,15 @@ import {
   UniqueComponentId,
   zindexutils
 } from "./chunk-WVPTNUDN.js";
+import {
+  CommonModule,
+  DOCUMENT,
+  NgClass,
+  NgForOf,
+  NgIf,
+  NgStyle,
+  NgTemplateOutlet
+} from "./chunk-KWYPC52F.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

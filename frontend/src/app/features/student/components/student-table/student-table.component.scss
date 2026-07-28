@@ -1,14 +1,19 @@
-@use '../../../../styles/variables' as *;
-@use '../../../../styles/mixins' as *;
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
 
-:host { display: block; @include nunito; }
+:host {
+  display: block;
+  @include nunito;
+}
 
 .page-wrapper {
   min-height: 100vh;
   padding: 40px 40px 80px;
   @include nunito;
 
-  @media (max-width: 600px) { padding: 24px 16px 60px; }
+  @media (max-width: 600px) {
+    padding: 24px 16px 60px;
+  }
 }
 
 .page-header {
@@ -18,6 +23,8 @@
   margin-bottom: 28px;
   flex-wrap: wrap;
   gap: 12px;
+  padding-top: 80px;
+
 
   h1 {
     @include nunito;
@@ -26,6 +33,8 @@
     color: $ink;
     margin: 0 0 2px;
     line-height: 1;
+    padding-top: 80px;
+
   }
 
   .page-sub {
@@ -33,6 +42,8 @@
     font-size: 0.82rem;
     color: $muted;
     font-weight: 600;
+    display: block;
+    margin-top: 3px;
   }
 }
 
@@ -49,19 +60,24 @@
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(100,181,246,0.3);
+  box-shadow: 0 4px 14px rgba(100, 181, 246, 0.3);
   transition: background 0.18s, transform 0.18s;
 
-  &:hover { background: $blue-dk; transform: translateY(-1px); }
+  &:hover {
+    background: $blue-dk;
+    transform: translateY(-1px);
+  }
 }
 
-.messages-wrap { margin-bottom: 18px; }
+.messages-wrap {
+  margin-bottom: 18px;
+}
 
 .table-card {
   background: $white;
   border-radius: 16px;
   border: 1px solid #e8edf2;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
 
@@ -84,10 +100,14 @@
 
   &:focus-within {
     border-color: $blue;
-    box-shadow: 0 0 0 3px rgba(100,181,246,0.12);
+    box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.12);
   }
 
-  i { color: $muted; font-size: 0.85rem; flex-shrink: 0; }
+  i {
+    color: $muted;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
 
   input {
     border: none;
@@ -99,13 +119,16 @@
     color: $ink;
     width: 100%;
 
-    &::placeholder { color: #b0bec5; font-weight: 600; }
+    &::placeholder {
+      color: #b0bec5;
+      font-weight: 600;
+    }
   }
 }
 
 ::ng-deep .p-datatable {
 
-  .p-datatable-thead > tr > th {
+  .p-datatable-thead>tr>th {
     background: #fafbfc;
     color: $muted;
     @include nunito;
@@ -118,11 +141,14 @@
     padding: 12px 18px;
   }
 
-  .p-datatable-tbody > tr {
+  .p-datatable-tbody>tr {
     transition: background 0.12s ease;
-    &:hover { background: #f8fafc !important; }
 
-    > td {
+    &:hover {
+      background: #f8fafc !important;
+    }
+
+    >td {
       @include nunito;
       font-size: 0.88rem;
       color: $ink;
@@ -140,10 +166,15 @@
     padding: 10px 18px;
 
     .p-paginator-pages .p-paginator-page,
-    .p-paginator-current { @include nunito; }
+    .p-paginator-current {
+      @include nunito;
+    }
   }
 
-  .p-sortable-column-icon { font-size: 0.7rem; color: $muted; }
+  .p-sortable-column-icon {
+    font-size: 0.7rem;
+    color: $muted;
+  }
 }
 
 .badge-id {
@@ -155,14 +186,14 @@
 
 .badge-turma {
   display: inline-block;
-  background: rgba(22,163,74,0.08);
+  background: rgba(22, 163, 74, 0.08);
   color: $green;
   @include nunito;
   font-size: 0.78rem;
   font-weight: 800;
   padding: 2px 10px;
   border-radius: 6px;
-  border: 1px solid rgba(22,163,74,0.18);
+  border: 1px solid rgba(22, 163, 74, 0.18);
 }
 
 .empty-row {
@@ -193,11 +224,24 @@
   font-size: 0.78rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 
-  &:hover { transform: translateY(-1px); }
+  &:hover {
+    transform: translateY(-1px);
+  }
 
-  &.view   { background: $blue-lt;             color: $blue-dk; }
-  &.edit   { background: rgba(226,182,21,0.1); color: darken($yellow,15%); }
-  &.delete { background: rgba(231,55,74,0.08); color: $red; }
+  &.view {
+    background: $blue-lt;
+    color: $blue-dk;
+  }
+
+  &.edit {
+    background: rgba(226, 182, 21, 0.1);
+    color: darken($yellow, 15%);
+  }
+
+  &.delete {
+    background: rgba(231, 55, 74, 0.08);
+    color: $red;
+  }
 }
 
 ::ng-deep .custom-dialog {
@@ -212,25 +256,53 @@
     border-bottom: 1px solid #f0f4f8;
   }
 
-  .p-dialog-content { padding: 0 !important; }
-  .p-dialog-footer  { padding: 0 !important; border-top: 1px solid #f0f4f8; }
+  .p-dialog-content {
+    padding: 0 !important;
+  }
 
-  p, span:not([class*="pi"]), h1, h2, h3,
-  label, button, td, th, small, strong {
+  .p-dialog-footer {
+    padding: 0 !important;
+    border-top: 1px solid #f0f4f8;
+  }
+
+  p,
+  span:not([class*="pi"]),
+  h1,
+  h2,
+  h3,
+  label,
+  button,
+  td,
+  th,
+  small,
+  strong {
     @include nunito;
   }
 }
 
-.dialog-header { display: flex; align-items: center; gap: 12px; }
+.dialog-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
 .dialog-icon {
-  width: 44px; height: 44px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem; flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  flex-shrink: 0;
 
-  &.danger { background: rgba(231,55,74,0.08); }
-  &.info   { background: $blue-lt; }
+  &.danger {
+    background: rgba(231, 55, 74, 0.08);
+  }
+
+  &.info {
+    background: $blue-lt;
+  }
 }
 
 .dialog-eyebrow {
@@ -274,7 +346,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  @media (max-width: 480px) { grid-template-columns: 1fr; }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .detail-item {
@@ -286,7 +361,9 @@
   flex-direction: column;
   gap: 3px;
 
-  &.full { grid-column: 1 / -1; }
+  &.full {
+    grid-column: 1 / -1;
+  }
 }
 
 .detail-label {
@@ -325,9 +402,24 @@
   border: none;
   transition: transform 0.15s, opacity 0.15s;
 
-  &:hover { transform: translateY(-1px); opacity: 0.9; }
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+  }
 
-  &.cancel         { background: #f1f5f9; color: $muted; border: 1px solid #e2e8f0; }
-  &.confirm-delete { background: $red;   color: $white; }
-  &.edit           { background: $blue;  color: $white; }
+  &.cancel {
+    background: #f1f5f9;
+    color: $muted;
+    border: 1px solid #e2e8f0;
+  }
+
+  &.confirm-delete {
+    background: $red;
+    color: $white;
+  }
+
+  &.edit {
+    background: $blue;
+    color: $white;
+  }
 }

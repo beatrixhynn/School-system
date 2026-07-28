@@ -17,8 +17,8 @@ import { MessageService } from 'primeng/api';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { CalendarModule } from 'primeng/calendar';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { GradeModel } from '../../grade/interfaces/grade-model.interface';
-import { GradeService } from '../../grade/services/grade-service.service';
+import { GradeModel } from '../../../pages/grade/interfaces/grade-model.interface';
+import { GradeService } from '../../../pages/grade/services/grade-service.service';
 
 
 
@@ -85,7 +85,7 @@ export class StudentFormComponent implements OnInit {
     private _populateGradeFormInput() {
 
         this.gradeService.getAll()
-            .subscribe(gradesList => this.gradesList = gradesList)
+            .subscribe((gradesList: GradeModel[]) => this.gradesList = gradesList)
     }
 
 

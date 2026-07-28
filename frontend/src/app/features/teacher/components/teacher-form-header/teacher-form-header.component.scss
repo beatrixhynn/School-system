@@ -1,5 +1,5 @@
-@use '../../../../styles/variables' as *;
-@use '../../../../styles/mixins' as *;
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
 
 :host{
     display:block;
@@ -10,6 +10,7 @@
   align-items: center;
   gap: 18px;
   margin-bottom: 24px;
+
 
   .form-header-icon {
     width: 62px;

@@ -1,4 +1,4 @@
-import { GradeModel } from "../../grade/interfaces/grade-model.interface"
+import { GradeModel } from "../../../pages/grade/interfaces/grade-model.interface"
 
         
         export interface StudentModel {

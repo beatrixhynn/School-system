@@ -1,14 +1,18 @@
-@use '../../styles/variables' as *;
-@use '../../styles/mixins' as *;
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
 
-:host { display: block }
+:host {
+  display: block
+}
 
 .page-wrapper {
   min-height: 100vh;
 
   padding: 48px 40px 80px;
 
-  @media (max-width: 600px) { padding: 32px 16px 60px; }
+  @media (max-width: 600px) {
+    padding: 32px 16px 60px;
+  }
 }
 
 .page-header {
@@ -18,6 +22,8 @@
   margin-bottom: 32px;
   gap: 16px;
   flex-wrap: wrap;
+  padding-top: 80px;
+
 }
 
 
@@ -47,36 +53,40 @@ h1 {
   background: $blue;
   color: $white;
   font-size: 0.88rem;
+  font-family: 'Nunito', sans-serif;
+
   font-weight: 900;
   letter-spacing: 0.05em;
   padding: 13px 28px;
   border-radius: 12px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(100,181,246,0.32);
+  box-shadow: 0 6px 20px rgba(100, 181, 246, 0.32);
   transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
 
   &:hover {
     background: $blue-dk;
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(100,181,246,0.4);
+    box-shadow: 0 10px 28px rgba(100, 181, 246, 0.4);
   }
 }
 
-.messages-wrap { margin-bottom: 20px; }
+.messages-wrap {
+  margin-bottom: 20px;
+}
 
 .table-card {
   background: $white;
   border-radius: 20px;
-  border: 2px solid rgba(100,181,246,0.15);
-  box-shadow: 0 8px 32px rgba(100,181,246,0.1);
+  border: 2px solid rgba(100, 181, 246, 0.15);
+  box-shadow: 0 8px 32px rgba(100, 181, 246, 0.1);
   overflow: hidden;
 }
 
 
 ::ng-deep .p-datatable {
 
-  .p-datatable-thead > tr > th {
+  .p-datatable-thead>tr>th {
     background: #f8fbff;
     color: $ink;
     font-family: 'Nunito', sans-serif;
@@ -84,20 +94,25 @@ h1 {
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    border-bottom: 2px solid rgba(100,181,246,0.18);
+    border-bottom: 2px solid rgba(100, 181, 246, 0.18);
     padding: 14px 18px;
   }
 
-  .p-datatable-tbody > tr {
+  .p-datatable-tbody>tr {
     transition: background 0.15s ease;
-    &:hover { background: #f5faff !important; }
 
-    > td {
+    &:hover {
+      background: #f5faff !important;
+    }
+
+    >td {
       font-size: 0.9rem;
       color: $ink;
       font-weight: 600;
       padding: 13px 18px;
       border-bottom: 1px solid #f0f7ff;
+      font-family: 'Nunito', sans-serif;
+
     }
   }
 
@@ -116,29 +131,29 @@ h1 {
   font-weight: 800;
   padding: 3px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(100,181,246,0.3);
+  border: 1px solid rgba(100, 181, 246, 0.3);
 }
 
 .badge-edu {
   display: inline-block;
-  background: rgba(124,58,237,0.08);
+  background: rgba(124, 58, 237, 0.08);
   color: $purple;
   font-size: 0.8rem;
   font-weight: 700;
   padding: 3px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(124,58,237,0.2);
+  border: 1px solid rgba(124, 58, 237, 0.2);
 }
 
 .badge-salary {
   display: inline-block;
-  background: rgba(22,163,74,0.08);
+  background: rgba(22, 163, 74, 0.08);
   color: $green;
   font-size: 0.85rem;
   font-weight: 800;
   padding: 3px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(22,163,74,0.2);
+  border: 1px solid rgba(22, 163, 74, 0.2);
 }
 
 .empty-row {
@@ -169,22 +184,59 @@ h1 {
   font-size: 0.85rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 
-  &:hover { transform: translateY(-2px); }
+  &:hover {
+    transform: translateY(-2px);
+  }
 
-  &.view   { background: $blue-lt; color: $blue-dk;
-              &:hover { box-shadow: 0 4px 12px rgba(100,181,246,0.3); } }
-  &.edit   { background: rgba(226,182,21,0.12); color: darken($yellow,15%);
-              &:hover { box-shadow: 0 4px 12px rgba(226,182,21,0.25); } }
-  &.delete { background: rgba(231,55,74,0.1); color: $red;
-              &:hover { box-shadow: 0 4px 12px rgba(231,55,74,0.25); } }
+  &.view {
+    background: $blue-lt;
+    color: $blue-dk;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(100, 181, 246, 0.3);
+    }
+  }
+
+  &.edit {
+    background: rgba(226, 182, 21, 0.12);
+    color: darken($yellow, 15%);
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(226, 182, 21, 0.25);
+    }
+  }
+
+  &.delete {
+    background: rgba(231, 55, 74, 0.1);
+    color: $red;
+
+    &:hover {
+      box-shadow: 0 4px 12px rgba(231, 55, 74, 0.25);
+    }
+  }
 }
 
 // ── DIALOGS ───────────────────────────────────
 ::ng-deep .custom-dialog {
-  .p-dialog            { border-radius: 22px !important; overflow: hidden; font-family: 'Nunito', sans-serif; }
-  .p-dialog-header     { padding: 24px 28px 16px; border-bottom: 1px solid #f0f7ff; }
-  .p-dialog-content    { padding: 0 !important; }
-  .p-dialog-footer     { padding: 0 !important; border-top: 1px solid #f0f7ff; }
+  .p-dialog {
+    border-radius: 22px !important;
+    overflow: hidden;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .p-dialog-header {
+    padding: 24px 28px 16px;
+    border-bottom: 1px solid #f0f7ff;
+  }
+
+  .p-dialog-content {
+    padding: 0 !important;
+  }
+
+  .p-dialog-footer {
+    padding: 0 !important;
+    border-top: 1px solid #f0f7ff;
+  }
 }
 
 .dialog-header {
@@ -194,67 +246,149 @@ h1 {
 }
 
 .dialog-icon {
-  width: 50px; height: 50px;
+  width: 50px;
+  height: 50px;
   border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.6rem; flex-shrink: 0;
-  &.danger { background: rgba(231,55,74,0.1); }
-  &.info   { background: $blue-lt; }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+
+  &.danger {
+    background: rgba(231, 55, 74, 0.1);
+  }
+
+  &.info {
+    background: $blue-lt;
+  }
 }
 
 .dialog-eyebrow {
-  font-size: 0.7rem; font-weight: 800;
-  color: $muted; letter-spacing: 0.12em;
-  text-transform: uppercase; margin: 0 0 3px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: $muted;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 3px;
 }
 
-.dialog-title { font-size: 1.15rem; font-weight: 900; color: $ink; }
+.dialog-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: $ink;
+}
 
 .dialog-body {
   padding: 24px 28px;
 
-  p { font-size: 0.95rem; color: $ink; font-weight: 600; margin-bottom: 8px; font-family: 'Nunito', sans-serif; }
-  .dialog-warn { font-size: 0.85rem; color: $red; font-weight: 700; margin-top: 12px; }
+  p {
+    font-size: 0.95rem;
+    color: $ink;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .dialog-warn {
+    font-size: 0.85rem;
+    color: $red;
+    font-weight: 700;
+    margin-top: 12px;
+  }
 }
 
 .detail-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
-  @media (max-width: 480px) { grid-template-columns: 1fr; }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .detail-item {
   background: #f8fbff;
-  border: 1px solid rgba(100,181,246,0.15);
+  border: 1px solid rgba(100, 181, 246, 0.15);
   border-radius: 12px;
   padding: 12px 16px;
-  display: flex; flex-direction: column; gap: 4px;
-  &.full { grid-column: 1 / -1; }
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &.full {
+    grid-column: 1 / -1;
+  }
 }
 
-.detail-label { font-size: 0.7rem; font-weight: 800; color: $muted; text-transform: uppercase; letter-spacing: 0.1em; }
-.detail-value { font-size: 0.95rem; font-weight: 700; color: $ink; }
+.detail-label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: $muted;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.detail-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: $ink;
+}
 
 .dialog-footer {
-  display: flex; justify-content: flex-end;
-  gap: 12px; padding: 18px 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 18px 24px;
 }
 
 .dlg-btn {
-  display: inline-flex; align-items: center; gap: 7px;
-  padding: 11px 24px; border-radius: 10px;
-  font-family: 'Nunito', sans-serif; font-size: 0.88rem; font-weight: 800;
-  cursor: pointer; border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 24px;
+  border-radius: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
   transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
-  &:hover { transform: translateY(-2px); }
 
-  &.cancel         { background: #f0f7ff; color: $muted; border: 2px solid #e2eaf4;
-                     &:hover { border-color: $muted; } }
-  &.confirm-delete { background: $red; color: $white; box-shadow: 0 4px 14px rgba(231,55,74,0.3);
-                     &:hover { box-shadow: 0 8px 20px rgba(231,55,74,0.4); } }
-  &.edit           { background: $blue; color: $white; box-shadow: 0 4px 14px rgba(100,181,246,0.3);
-                     &:hover { box-shadow: 0 8px 20px rgba(100,181,246,0.4); } }
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &.cancel {
+    background: #f0f7ff;
+    color: $muted;
+    border: 2px solid #e2eaf4;
+
+    &:hover {
+      border-color: $muted;
+    }
+  }
+
+  &.confirm-delete {
+    background: $red;
+    color: $white;
+    box-shadow: 0 4px 14px rgba(231, 55, 74, 0.3);
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(231, 55, 74, 0.4);
+    }
+  }
+
+  &.edit {
+    background: $blue;
+    color: $white;
+    box-shadow: 0 4px 14px rgba(100, 181, 246, 0.3);
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(100, 181, 246, 0.4);
+    }
+  }
 }
 
 .table-toolbar {
@@ -276,10 +410,14 @@ h1 {
 
   &:focus-within {
     border-color: #64b5f6;
-    box-shadow: 0 0 0 3px rgba(100,181,246,0.12);
+    box-shadow: 0 0 0 3px rgba(100, 181, 246, 0.12);
   }
 
-  i { color: #64748b; font-size: 0.85rem; flex-shrink: 0; }
+  i {
+    color: #64748b;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
 
   input {
     border: none;
@@ -290,7 +428,10 @@ h1 {
     color: #1e293b;
     width: 100%;
 
-    &::placeholder { color: #b0bec5; font-weight: 600; }
+    &::placeholder {
+      color: #b0bec5;
+      font-weight: 600;
+    }
   }
 }
 

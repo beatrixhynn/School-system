@@ -11,9 +11,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { GradeService } from '../services/grade-service.service';
 import { GradeModel } from '../interfaces/grade-model.interface';
 import { GradeForm } from '../interfaces/grade-form.interface';
+import { TeacherService } from '../../../features/teacher/services/teacher-service.service';
+import { TeacherModel } from '../../../features/teacher/interfaces/teacher-model.interface';
 
-import { TeacherService } from '../../teacher/services/teacher-service.service';
-import { TeacherModel } from '../../teacher/interfaces/teacher-model.interface';
 
 
 @Component({

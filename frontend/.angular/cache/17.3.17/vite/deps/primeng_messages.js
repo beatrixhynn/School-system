@@ -18,8 +18,14 @@ import {
 import {
   Ripple,
   RippleModule
-} from "./chunk-NOQOLNKY.js";
+} from "./chunk-WATW3OZW.js";
 import "./chunk-5JO7MPJR.js";
+import {
+  MessageService,
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule
+} from "./chunk-WVPTNUDN.js";
 import {
   CommonModule,
   NgClass,
@@ -28,12 +34,6 @@ import {
   NgStyle,
   NgTemplateOutlet
 } from "./chunk-KWYPC52F.js";
-import {
-  MessageService,
-  PrimeNGConfig,
-  PrimeTemplate,
-  SharedModule
-} from "./chunk-WVPTNUDN.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

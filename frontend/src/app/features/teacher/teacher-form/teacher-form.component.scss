@@ -1,5 +1,5 @@
-@use '../../../styles/variables' as *;
-@use '../../../styles/mixins' as *;
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
 
 :host {
   display: block;
@@ -8,15 +8,17 @@
 .form-page {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 60px 24px 80px;
+  align-items: center;
+  min-height: 100vh;  
+  margin-top: 150px;
+  // padding-top: 80px;
+  // padding: 60px 24px 80px;
 }
 
 .form-card {
   width: 100%;
   max-width: 780px;
-  padding: 48px 52px 44px;
+  padding: 36px 52px 44px;
   background: $white;
   border: 2px solid rgba(100, 181, 246, .2);
   border-radius: 28px;
