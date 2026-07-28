@@ -1,0 +1,30 @@
+<div class="footer-form">
+  <h3>Quer saber mais sobre nossa Escola?</h3>
+  <p>Cadastre-se e entraremos em contato.</p>
+
+  <form [formGroup]="form" (ngSubmit)="doSubmitForm()" novalidate>
+    <div class="form-group">
+      <input pInputText formControlName="name" style="width: 100%;" placeholder="Nome completo" />
+      <small *ngIf="form.get('name')?.invalid && form.get('name')?.touched" style="color:red;">
+        Nome é obrigatório e deve ter pelo menos 3 letras.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <input pInputText formControlName="email" style="width: 100%;" placeholder="Email" />
+      <small *ngIf="form.get('email')?.invalid && form.get('email')?.touched" style="color:red;">
+        Email obrigatório e válido.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <p-checkbox formControlName="concordo" binary="true"
+        label="Declaro que li e concordo com a Política de Privacidade." inputId="concordo"></p-checkbox>
+      <small *ngIf="form.get('concordo')?.invalid && form.get('concordo')?.touched" style="color:red;">
+        Você precisa concordar com as políticas.
+      </small>
+    </div>
+
+    <p-button label="Enviar" type="submit" class="btn-salvar" [disabled]="form.invalid"></p-button>
+  </form>
+</div>

@@ -1,0 +1,89 @@
+<div class="schedule-box">
+
+
+  <div class="schedule-top">
+
+    <div>
+
+      <p class="top-label">
+        Confira nossos
+      </p>
+
+
+      <h2>
+        Horários de
+        <strong>Funcionamento</strong>
+      </h2>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="divider"></div>
+
+
+
+  @for(schedule of schedules; track schedule.type) {
+
+
+    <div class="schedule-row">
+
+
+      <div 
+        class="row-badge"
+        [class]="schedule.className">
+
+        {{ schedule.type }}
+
+      </div>
+
+
+
+      <div class="row-times">
+
+
+        @for(time of schedule.times; track time) {
+
+          <span>
+            {{time}}
+          </span>
+
+        }
+
+
+      </div>
+
+
+    </div>
+
+
+
+    @if(!$last) {
+
+      <div class="divider-soft"></div>
+
+    }
+
+
+  }
+
+
+
+  <div class="schedule-footer">
+
+    <p>
+      Dúvidas?
+    </p>
+
+
+    <a href="https://whatsapp" target="_blank">
+      Entre em contato conosco!
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+  </div>
+
+
+</div>

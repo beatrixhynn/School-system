@@ -1,0 +1,325 @@
+
+@use '../../../../styles/variables' as *;
+
+
+:host {
+  display: block;
+}
+
+
+.schedule-box {
+
+  width: 480px;
+  min-height: 520px;
+
+  padding: 44px 40px 36px;
+
+  display: flex;
+  flex-direction: column;
+
+
+  background: $main;
+
+  border-radius: 28px;
+
+  position: relative;
+  overflow: hidden;
+
+
+  box-shadow:
+    0 20px 60px rgba($blue,.4),
+    0 4px 12px rgba(0,0,0,.08);
+
+
+
+  &::before {
+
+    content:'';
+
+    position:absolute;
+
+    inset:0 0 auto;
+
+    height:50%;
+
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(255,255,255,.18),
+        transparent
+      );
+
+
+    border-radius:inherit;
+  }
+
+
+
+  @media(max-width:540px){
+
+    width:100%;
+
+    padding:32px 24px;
+
+  }
+
+}
+
+
+
+
+.schedule-top {
+
+
+  margin-bottom:28px;
+
+
+  .top-label {
+
+    font-size:.78rem;
+
+    font-weight:700;
+
+    color:rgba($white,.7);
+
+    text-transform:uppercase;
+
+    letter-spacing:.12em;
+
+    margin-bottom:4px;
+
+  }
+
+
+
+  h2 {
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+    color:rgba($white,.88);
+
+    line-height:1.25;
+
+
+
+    strong {
+
+      display:block;
+
+      font-size:1.5rem;
+
+      font-weight:900;
+
+      color:$white;
+
+    }
+
+  }
+
+}
+
+
+
+.divider,
+.divider-soft {
+
+  height:1px;
+
+}
+
+
+.divider {
+
+  background:rgba($white,.3);
+
+  margin-bottom:28px;
+
+}
+
+
+
+.divider-soft {
+
+  background:rgba($white,.15);
+
+  margin:18px 0;
+
+}
+
+
+
+
+.schedule-row {
+
+
+  display:flex;
+
+  align-items:center;
+
+  gap:20px;
+
+  margin-bottom:10px;
+
+
+
+  .row-badge {
+
+
+    min-width:80px;
+
+    padding:6px 16px;
+
+
+    border-radius:999px;
+
+    text-align:center;
+
+    white-space:nowrap;
+
+
+    font-size:.78rem;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+    letter-spacing:.1em;
+
+
+    border:2px solid rgba($white,.6);
+
+
+
+    &.regular {
+
+      background:rgba($white,.28);
+
+      color:$white;
+
+    }
+
+
+
+    &.parcial {
+
+      background:rgba($yellow,.28);
+
+      color:#fff8dc;
+
+      border-color:rgba($yellow,.5);
+
+    }
+
+
+
+    &.integral {
+
+      background:rgba(52,211,153,.28);
+
+      color:#d1fae5;
+
+      border-color:rgba(52,211,153,.5);
+
+    }
+
+  }
+
+
+
+
+  .row-times {
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+
+
+    span {
+
+      color:rgba($white,.8);
+
+      font-size:.95rem;
+
+      font-weight:600;
+
+
+      strong {
+
+        color:$white;
+
+        font-weight:800;
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+
+.schedule-footer {
+
+
+  margin-top:auto;
+
+  padding-top:28px;
+
+  border-top:1px solid rgba($white,.2);
+
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:10px;
+
+
+
+  p {
+
+    color:rgba($white,.75);
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+  }
+
+
+
+  a {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+
+    color:$white;
+
+    text-decoration:none;
+
+
+    .fa-whatsapp {
+
+      font-size:1.2rem;
+
+    }
+
+  }
+
+}

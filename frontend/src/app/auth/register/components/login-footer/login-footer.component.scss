@@ -1,0 +1,23 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+
+
+.login-footer {
+  margin-top: 20px;
+  text-align: center;
+
+  .back-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $muted;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    &:hover {
+      color: $blue-dk;
+    }
+  }
+}

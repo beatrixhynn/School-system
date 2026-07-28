@@ -1,27 +1,28 @@
 
 import { Routes } from '@angular/router';
-import { StudentFormComponent } from './student/student-form/student-form.component';
-import { TeacherFormComponent } from './teacher/teacher-form/teacher-form.component';
-import { SchoolMealFormComponent } from './school-meal/school-meal-form/school-meal-form.component';
+import { StudentFormComponent } from './features/student/student-form/student-form.component';
+import { TeacherFormComponent } from './features/teacher/teacher-form/teacher-form.component';
 
-import { TeacherComponent } from './teacher/teacher.component';
-import { GradeComponent } from './grade/grade.component';
-import { SchoolMealComponent } from './school-meal/school-meal.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { GalleryPageComponent } from './gallery-page/gallery-page.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
+import { TeacherComponent } from './features/teacher/teacher.component';
+
+import { MainMenuComponent } from './layout/main-menu/main-menu.component';
+import { GalleryComponent } from './pages/gallery/gallery.component';
 import { Component } from '@angular/core';
-import { LoginComponent } from './login/login.component';
-import { ThreeColumnsComponent } from './three-columns/three-columns.component';
-import { LoginFormComponent } from './login-form/login-form.component';
+import { ThreeColumnsComponent } from './layout/three-columns/three-columns.component';
 import { AuthGuard } from './guards/auth.guard';
 import { adminGuard } from './guards/admin.guard';
-import { RegisterComponent } from './register/register.component';
-import { HeaderComponent } from './header/header.component';
-import { GradeFormComponent } from './grade/grade-form/grade-form.component';
-import { StudentComponent } from './student/student.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { StudentComponent } from './features/student/student.component';
+import { SchoolMealFormComponent } from './pages/school-meal/school-meal-form/school-meal-form.component';
+import { LoginComponent } from './auth/login/login.component';
+import { GradeComponent } from './pages/grade/grade.component';
+import { SchoolMealComponent } from './pages/school-meal/school-meal.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { GalleryPageComponent } from './pages/gallery-page/gallery-page.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { LoginFormComponent } from './auth/login-form/login-form.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { GradeFormComponent } from './pages/grade/grade-form/grade-form.component';
 
 
 export const routes: Routes = [
@@ -47,7 +48,6 @@ export const routes: Routes = [
         { path: 'three-columns', component: ThreeColumnsComponent },
         { path: 'login', component: LoginComponent },
         { path: 'login-form', component: LoginFormComponent },
-        // { path: 'students', component: StudentComponent, canActivate: [AuthGuard] },
         {
                 path: 'students',
                 component: StudentComponent,

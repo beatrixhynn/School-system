@@ -1,0 +1,63 @@
+
+@use '../../../styles/variables' as *;
+
+.app-footer {
+  position: relative;
+  padding: 80px 15px 10px;
+  background: $blue;
+  color: $white;
+
+  .custom-shape-divider-top-1767829964 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+
+    svg {
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 92px;
+    }
+
+    .shape-fill {
+      fill: $white;
+    }
+  }
+}
+
+.footer-main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-bottom {
+  margin-top: 24px;
+  padding-top: 10px;
+  text-align: center;
+  color: $white;
+  font-size: .875rem;
+}
+
+.btn-topo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2.5px solid $yellow;
+  background: transparent;
+  color: $white;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  &:hover {
+    background: $yellow;
+    transform: translateY(-3px);
+  }
+}

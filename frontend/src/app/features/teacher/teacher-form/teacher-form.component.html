@@ -1,0 +1,40 @@
+
+<p-toast></p-toast>
+
+<div class="form-page">
+
+  <div class="form-card">
+
+
+    <app-teacher-form-header
+      [isEdit]="!!idteacher">
+    </app-teacher-form-header>
+
+
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="doSubmitForm()"
+      novalidate>
+
+
+      <app-teacher-form-fields
+        [form]="form">
+      </app-teacher-form-fields>
+
+
+
+      <app-teacher-form-actions
+        [isEdit]="!!idteacher"
+        [disabled]="form.invalid"
+        (cancel)="router.navigateByUrl('teachers')">
+      </app-teacher-form-actions>
+
+
+
+    </form>
+
+
+  </div>
+
+</div>

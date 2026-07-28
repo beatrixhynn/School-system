@@ -1,0 +1,80 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+
+:host {
+  display: block;
+}
+
+
+.horario-wrapper {
+
+  padding: 80px 40px 100px;
+  
+}
+.section-title{
+  padding-top: 80px;
+}
+
+
+
+.contact-section {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 52px;
+
+  max-width: 1140px;
+
+  margin: 0 auto;
+
+
+  @media (max-width: 960px) {
+
+    flex-direction: column;
+
+  }
+
+}
+
+
+
+.map {
+
+  flex-shrink: 0;
+
+
+  iframe {
+
+    display: block;
+
+    width: 520px;
+
+    height: 520px;
+
+    border: 0;
+
+    border-radius: 24px;
+
+    box-shadow:
+      0 0 0 4px $white,
+      0 0 0 7px rgba($blue,.3),
+      0 16px 48px rgba($blue,.18);
+
+
+
+    @media (max-width:580px) {
+
+      width:100%;
+
+      height:300px;
+
+    }
+
+  }
+
+}

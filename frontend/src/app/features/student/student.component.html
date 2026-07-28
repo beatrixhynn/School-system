@@ -1,0 +1,30 @@
+
+
+
+<p-toast></p-toast>
+
+<div class="page-wrapper">
+
+  <app-student-header [totalStudents]="studentsList.length" [isAdmin]="loginService.isAdmin()"
+    (create)="goToCreatePage()">
+  </app-student-header>
+
+
+
+  <div *ngIf="messages.length > 0" class="messages-wrap">
+    <p-messages [(value)]="messages">
+    </p-messages>
+  </div>
+
+  <app-student-table [students]="studentsList" [isAdmin]="loginService.isAdmin()" (view)="openModalToLook($event)"
+    (edit)="openPageToEdit($event)" (delete)="openModalToDelete($event)">
+  </app-student-table>
+
+  <app-student-details-dialog [(visible)]="visibleModalToSeeModel" [student]="modelToLook"
+    (edit)="openPageToEdit($event)">
+  </app-student-details-dialog>
+  <app-student-delete-dialog [(visible)]="visibleModalDelete" [student]="modelToDelete"
+    (confirmDelete)="doDelete($event)">
+  </app-student-delete-dialog>
+
+</div>
