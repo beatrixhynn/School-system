@@ -2,9 +2,16 @@ import {
   AngleRightIcon
 } from "./chunk-WMDSJCSL.js";
 import {
+  RouterLink,
+  RouterLinkActive,
+  RouterModule
+} from "./chunk-WIRNRO43.js";
+import {
   Tooltip,
   TooltipModule
-} from "./chunk-GWJIYSKP.js";
+} from "./chunk-NP5IDUKI.js";
+import "./chunk-T4TL4VMF.js";
+import "./chunk-NGJP63KZ.js";
 import {
   animate,
   style,
@@ -14,27 +21,11 @@ import {
 import {
   Ripple,
   RippleModule
-} from "./chunk-WATW3OZW.js";
+} from "./chunk-NOQOLNKY.js";
 import {
   ConnectedOverlayScrollHandler,
   DomHandler
 } from "./chunk-5JO7MPJR.js";
-import {
-  ObjectUtils,
-  OverlayService,
-  PrimeNGConfig,
-  PrimeTemplate,
-  SharedModule,
-  UniqueComponentId,
-  zindexutils
-} from "./chunk-WVPTNUDN.js";
-import {
-  RouterLink,
-  RouterLinkActive,
-  RouterModule
-} from "./chunk-WIRNRO43.js";
-import "./chunk-T4TL4VMF.js";
-import "./chunk-NGJP63KZ.js";
 import {
   CommonModule,
   DOCUMENT,
@@ -45,6 +36,15 @@ import {
   NgTemplateOutlet,
   isPlatformBrowser
 } from "./chunk-KWYPC52F.js";
+import {
+  ObjectUtils,
+  OverlayService,
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule,
+  UniqueComponentId,
+  zindexutils
+} from "./chunk-WVPTNUDN.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

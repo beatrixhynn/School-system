@@ -11,18 +11,18 @@ import {
 } from "./chunk-MQG3SYT4.js";
 import "./chunk-5JO7MPJR.js";
 import {
-  ObjectUtils,
-  PrimeNGConfig,
-  PrimeTemplate,
-  SharedModule
-} from "./chunk-WVPTNUDN.js";
-import {
   CommonModule,
   NgClass,
   NgIf,
   NgStyle,
   NgTemplateOutlet
 } from "./chunk-KWYPC52F.js";
+import {
+  ObjectUtils,
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule
+} from "./chunk-WVPTNUDN.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

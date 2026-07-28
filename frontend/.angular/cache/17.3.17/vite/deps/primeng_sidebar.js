@@ -12,16 +12,10 @@ import {
 import {
   Ripple,
   RippleModule
-} from "./chunk-WATW3OZW.js";
+} from "./chunk-NOQOLNKY.js";
 import {
   DomHandler
 } from "./chunk-5JO7MPJR.js";
-import {
-  PrimeNGConfig,
-  PrimeTemplate,
-  SharedModule,
-  zindexutils
-} from "./chunk-WVPTNUDN.js";
 import {
   CommonModule,
   DOCUMENT,
@@ -30,6 +24,12 @@ import {
   NgStyle,
   NgTemplateOutlet
 } from "./chunk-KWYPC52F.js";
+import {
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule,
+  zindexutils
+} from "./chunk-WVPTNUDN.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

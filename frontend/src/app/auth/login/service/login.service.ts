@@ -74,10 +74,16 @@ export class LoginService {
     return localStorage.getItem('role');
   }
 
+  // isAdmin(): boolean {
+  //   const role = this.getRole();
+  //   return role === 'ADMIN';
+  // }
+
   isAdmin(): boolean {
-    const role = this.getRole();
-    return role === 'ADMIN';
-  }
+  const role = this.getRole();
+  console.log('ROLE:', role);
+  return role === 'ADMIN';
+}
 
   isPai(): boolean {
     return this.getRole() === 'PAI';

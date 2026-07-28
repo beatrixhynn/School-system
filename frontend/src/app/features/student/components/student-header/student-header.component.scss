@@ -1,0 +1,70 @@
+@use '../../../../../styles/variables' as *;
+
+:host {
+  display: block;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-top: 80px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin: 0;
+  color: $ink;
+  font-size: 1.9rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.page-sub {
+  display: block;
+  margin-top: 3px;
+  color: $muted;
+  font-size: .82rem;
+  font-weight: 600;
+}
+
+.btn-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  background: $blue;
+  color: $white;
+
+  padding: 13px 28px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-family: 'Nunito', sans-serif;
+  font-size: .88rem;
+  font-weight: 900;
+  letter-spacing: .05em;
+
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(100, 181, 246, .32);
+  transition: background .18s, transform .18s, box-shadow .18s;
+
+  &:hover {
+    background: $blue-dk;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(100, 181, 246, .4);
+  }
+}
+  .form-eyebrow {
+    display: block;
+    color: $red;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }

@@ -9,18 +9,10 @@ import {
 import {
   Ripple,
   RippleModule
-} from "./chunk-WATW3OZW.js";
+} from "./chunk-NOQOLNKY.js";
 import {
   DomHandler
 } from "./chunk-5JO7MPJR.js";
-import {
-  Footer,
-  Header,
-  PrimeNGConfig,
-  PrimeTemplate,
-  SharedModule,
-  UniqueComponentId
-} from "./chunk-WVPTNUDN.js";
 import {
   CommonModule,
   DOCUMENT,
@@ -31,6 +23,14 @@ import {
   NgTemplateOutlet,
   isPlatformBrowser
 } from "./chunk-KWYPC52F.js";
+import {
+  Footer,
+  Header,
+  PrimeNGConfig,
+  PrimeTemplate,
+  SharedModule,
+  UniqueComponentId
+} from "./chunk-WVPTNUDN.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,

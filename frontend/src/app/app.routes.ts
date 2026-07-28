@@ -5,7 +5,7 @@ import { TeacherFormComponent } from './features/teacher/teacher-form/teacher-fo
 
 import { TeacherComponent } from './features/teacher/teacher.component';
 
-import { MainMenuComponent } from './layout/footer/main-menu/main-menu.component';
+import { MainMenuComponent } from './layout/main-menu/main-menu.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { Component } from '@angular/core';
 import { ThreeColumnsComponent } from './layout/three-columns/three-columns.component';

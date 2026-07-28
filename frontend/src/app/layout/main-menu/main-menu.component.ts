@@ -8,10 +8,10 @@ import { MessagesModule } from 'primeng/messages';
 import { TableModule } from 'primeng/table';
 import { CarouselModule } from 'primeng/carousel';
 import { Router } from '@angular/router';
-import { GalleryComponent } from '../../../pages/gallery/gallery.component';
-import { HeroComponent } from '../../../shared/hero/hero.component';
-import { AboutUsComponent } from '../../../pages/about-us/about-us.component';
-import { ContactUsComponent } from '../../../pages/contact-us/contact-us.component';
+import { GalleryComponent } from '../../pages/gallery/gallery.component';
+import { HeroComponent } from '../../shared/hero/hero.component';
+import { AboutUsComponent } from '../../pages/about-us/about-us.component';
+import { ContactUsComponent } from '../../pages/contact-us/contact-us.component';
 
 @Component({
   selector: 'app-main-menu',
