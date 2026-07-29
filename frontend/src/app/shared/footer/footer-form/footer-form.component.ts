@@ -6,6 +6,8 @@ import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ContactService } from '../../../pages/contact-us/services/contact-us.service';
 import { ContactForm } from '../../../pages/contact-us/interfaces/contact-form.interface';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 
 @Component({
@@ -16,61 +18,61 @@ import { ContactForm } from '../../../pages/contact-us/interfaces/contact-form.i
     ReactiveFormsModule,
     InputTextModule,
     ButtonModule,
-    CheckboxModule  ],
+    CheckboxModule,
+    ToastModule],
+  providers: [MessageService],
   templateUrl: './footer-form.component.html',
   styleUrls: ['./footer-form.component.scss']
 })
 export class FooterFormComponent {
   form: FormGroup;
 
-  // constructor(private fb: FormBuilder) {
-  //   this.form = this.fb.group({
-  //     name: ['', [Validators.required, Validators.minLength(3)]],
-  //     email: ['', [Validators.required, Validators.email]],
-  //     concordo: [false, Validators.requiredTrue]
-  //   });
-  // }
   constructor(
-  private fb: FormBuilder,
-  private contactService: ContactService
-) {
-  this.form = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(3)]],
-    email: ['', [Validators.required, Validators.email]],
-    concordo: [false, Validators.requiredTrue]
-  });
-}
-doSubmitForm(): void {
-
-  if (this.form.invalid) {
-    this.form.markAllAsTouched();
-    return;
+    private messageService: MessageService,
+    private fb: FormBuilder,
+    private contactService: ContactService
+  ) {
+    this.form = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      concordo: [false, Validators.requiredTrue]
+    });
   }
+  doSubmitForm(): void {
 
-  const contact: ContactForm = {
-    name: this.form.value.name,
-    email: this.form.value.email
-  };
-
-  this.contactService.create(contact).subscribe({
-    next: () => {
-
-      alert('Cadastro realizado com sucesso!');
-
-      this.form.reset({
-        name: '',
-        email: '',
-        concordo: false
-      });
-
-    },
-
-    error: (error) => {
-      console.error(error);
-      alert('Erro ao enviar cadastro.');
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
     }
 
-  });
+    const contact: ContactForm = {
+      name: this.form.value.name,
+      email: this.form.value.email
+    };
 
-}
+    this.contactService.create(contact).subscribe({
+      next: () => {
+
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Sucesso',
+          detail: 'Recebemos seu contato. Em breve retornaremos!'
+        });
+
+        this.form.reset({
+          name: '',
+          email: '',
+          concordo: false
+        });
+
+      },
+
+      error: (error) => {
+        console.error(error);
+        alert('Erro ao enviar cadastro.');
+      }
+
+    });
+
+  }
 }
