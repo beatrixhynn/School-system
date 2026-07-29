@@ -18,7 +18,6 @@ import { GradeModel } from './interfaces/grade-model.interface';
     standalone: true,
     imports: [
         CommonModule,
-        HttpClientModule,
         TableModule,
         DialogModule,
         MessagesModule

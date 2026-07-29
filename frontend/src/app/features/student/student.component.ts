@@ -65,12 +65,26 @@ export class StudentComponent implements OnInit {
     this.getStudents();
   }
 
-  private getStudents(): void {
-    this.studentService
-      .getAll()
-      .subscribe(students => this.studentsList = students);
-  }
+  // private getStudents(): void {
+  //   this.studentService
+  //     .getAll()
+  //     .subscribe(students => this.studentsList = students);
+  // }
+private getStudents(): void {
 
+  console.log('Chamando getStudents');
+
+  this.studentService
+    .getAll()
+    .subscribe({
+      next: students => {
+        console.log('Recebeu alunos');
+        this.studentsList = students;
+      },
+      error: err => console.error(err)
+    });
+
+}
 
   goToCreatePage(): void {
     this.router.navigateByUrl('students-form');

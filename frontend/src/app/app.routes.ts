@@ -27,7 +27,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 export const routes: Routes = [
-        { path: '', component: LoginComponent },
+        { path: '', component: LoginComponent, data: { hideLayout: true } },
         { path: 'main-menu', component: MainMenuComponent },
         { path: 'students-form', component: StudentFormComponent },
         { path: 'students-form/:id', component: StudentFormComponent },

@@ -18,7 +18,6 @@ import { ToastModule } from 'primeng/toast';
     standalone: true,
     imports: [
         CommonModule,
-        HttpClientModule,
         ButtonModule,
         TableModule,
         DialogModule,

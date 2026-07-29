@@ -1,30 +1,3 @@
-// import { Component } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { Router, RouterOutlet } from '@angular/router';
-// import { MessageService } from 'primeng/api';
-
-// import { HeaderComponent } from './shared/header/header.component';
-// import { FooterComponent } from './shared/footer/footer/footer.component';
-
-// @Component({
-//   selector: 'app-root',
-//   standalone: true,
-//   imports: [
-//     CommonModule,
-//     HeaderComponent,
-//     RouterOutlet,
-//     FooterComponent
-//   ],
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.scss'],
-//   providers: [MessageService]
-// })
-// export class AppComponent {
-
-//   constructor(public router: Router) {}
-
-// }
-
 
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -40,6 +13,7 @@ import { MessageService } from 'primeng/api';
 
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer/footer.component';
+import { LoadingComponent } from './shared/loading/loading.component';
 
 @Component({
   selector: 'app-root',
@@ -48,7 +22,8 @@ import { FooterComponent } from './shared/footer/footer/footer.component';
     CommonModule,
     RouterOutlet,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoadingComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

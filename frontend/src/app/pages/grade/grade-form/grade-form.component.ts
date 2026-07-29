@@ -21,7 +21,6 @@ import { TeacherModel } from '../../../features/teacher/interfaces/teacher-model
     standalone: true,
     imports: [
         CommonModule,
-        HttpClientModule,
         ReactiveFormsModule,
         InputTextModule,
         DropdownModule

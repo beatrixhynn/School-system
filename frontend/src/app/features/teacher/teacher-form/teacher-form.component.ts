@@ -32,7 +32,6 @@ import { TeacherFormFieldsComponent } from '../components/teacher-form-fields/te
     standalone: true,
     imports: [
         CommonModule,
-        HttpClientModule,
         ButtonModule,
         InputTextModule,
         FormsModule,
