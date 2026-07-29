@@ -12,13 +12,13 @@ import {
 import {
   ButtonDirective,
   ButtonModule
-} from "./chunk-ECBCBJE7.js";
+} from "./chunk-PJ4F4J5B.js";
 import "./chunk-VADHX7FR.js";
-import "./chunk-MQG3SYT4.js";
 import {
   Ripple,
   RippleModule
 } from "./chunk-NOQOLNKY.js";
+import "./chunk-MQG3SYT4.js";
 import {
   BaseIcon,
   DomHandler

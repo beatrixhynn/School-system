@@ -88,7 +88,7 @@ export class SchoolMealComponent implements OnInit {
     private _doDeleteSuccessActions(): void {
         this._getAllschoolMealsList()
         this.visibleModalDelete = false;
-        this.messages = [{ severity: 'success', summary: 'Success', detail: 'school Meal deleted with success' }];
+        this.messages = [{ severity: 'success', summary: 'Success', detail: 'Refeição excluída com sucesso' }];
     }
 
     getRestrictionClass(type?: string): string {

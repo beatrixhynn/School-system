@@ -23,6 +23,7 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { LoginFormComponent } from './auth/login-form/login-form.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { GradeFormComponent } from './pages/grade/grade-form/grade-form.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 export const routes: Routes = [
@@ -46,12 +47,19 @@ export const routes: Routes = [
         { path: 'gallery-page', component: GalleryPageComponent },
         { path: 'contact-us', component: ContactUsComponent },
         { path: 'three-columns', component: ThreeColumnsComponent },
-        { path: 'login', component: LoginComponent },
-        { path: 'login-form', component: LoginFormComponent },
+        { path: 'login', component: LoginComponent ,  data: { hideLayout: true }
+ },
+        { path: 'login-form', component: LoginFormComponent ,  data: { hideLayout: true }
+ },
         {
                 path: 'students',
                 component: StudentComponent,
                 canActivate: [adminGuard]
         },
-        { path: 'register', component: RegisterComponent },
+        { path: 'register', component: RegisterComponent, data: { hideLayout: true } },
+        {
+                path: '**',
+                component: NotFoundComponent,  data: { hideLayout: true }
+
+        }
 ];

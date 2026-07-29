@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './not-found.component.html',
-  styleUrl: './not-found.component.scss'
+  styleUrls: ['./not-found.component.scss']
 })
 export class NotFoundComponent {
+
+  constructor(private router: Router) {}
+
+  voltarInicio() {
+    this.router.navigateByUrl('/main-menu');
+  }
 
 }
