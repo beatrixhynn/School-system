@@ -4,7 +4,7 @@ import { RouterOutlet, Routes } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { FooterComponent } from './layout/footer/footer.component';
+import { FooterComponent } from './shared/footer/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 
 @Component({
