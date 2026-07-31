@@ -1,0 +1,23 @@
+{
+  "routes": [
+    "/",
+    "/about-us",
+    "/contact-us",
+    "/gallery",
+    "/gallery-page",
+    "/grades",
+    "/grades-form",
+    "/header",
+    "/login",
+    "/login-form",
+    "/main-menu",
+    "/register",
+    "/school-meals",
+    "/school-meals-form",
+    "/students",
+    "/students-form",
+    "/teachers",
+    "/teachers-form",
+    "/three-columns"
+  ]
+}
