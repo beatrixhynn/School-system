@@ -18,7 +18,6 @@ import { ToastModule } from 'primeng/toast';
     standalone: true,
     imports: [
         CommonModule,
-        HttpClientModule,
         ButtonModule,
         TableModule,
         DialogModule,
@@ -90,9 +89,22 @@ export class TeacherComponent implements OnInit {
     private _doDeleteSuccessActions(): void {
         this._getAllteachersList()
         this.visibleModalDelete = false;
-        this.messages = [{ severity: 'success', summary: 'Success', detail: 'teacher deleted with success' }];
+        this.messages = [{ severity: 'success', summary: 'Success', detail: 'Professor excluído com sucesso' }];
     }
+    private getTeachers(): void {
 
+        console.log('Chamando getTeachers');
+
+        this.teacherService
+            .getAll()
+            .subscribe({
+                next: teachers => {
+                    console.log('Recebeu professores');
+                    this.teachersList = teachers;
+                }
+            });
+
+    }
 
 
 }

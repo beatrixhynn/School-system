@@ -27,7 +27,6 @@ import { GradeService } from '../../../pages/grade/services/grade-service.servic
     standalone: true,
     imports: [
         CommonModule,
-        HttpClientModule,
         ButtonModule,
         InputTextModule,
         FormsModule,
