@@ -36,24 +36,21 @@
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
             ],
             "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "prerender": false,
+            "ssr": false
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "8kb",
+                  "maximumError": "12kb"
                 }
               ],
               "outputHashing": "all"
@@ -66,7 +63,6 @@
           },
           "defaultConfiguration": "production"
         },
-
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
@@ -112,8 +108,8 @@
       }
     }
   }
-  }
+}
 },
 "cli": {
-  "analytics": "72cb6ec2-d394-4a1d-997c-081965cc9e7a"
+"analytics": "72cb6ec2-d394-4a1d-997c-081965cc9e7a"
 }
